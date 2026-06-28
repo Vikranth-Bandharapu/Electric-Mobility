@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Energy Control Center - Stackly Grid</title>
+    <!-- Styles -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body class="dashboard-wrapper">
+
+    <!-- Dashboard Sidebar Navigation -->
+    <aside class="sidebar" id="db-sidebar">
+        <div class="sidebar-brand">
+            <a href="index.html" class="logo">
+                <img src="assets/logo.webp" alt="Stackly Grid Logo" style="height: 30px; width: auto; display: block;" />
+               
+            </a>
+        </div>
+
+        <ul class="sidebar-menu">
+            <li><a class="sidebar-link active" onclick="switchDbSection('overview')"><i class="fa-solid fa-gauge"></i> Dashboard</a></li>
+            <li><a class="sidebar-link" onclick="switchDbSection('users')"><i class="fa-solid fa-users"></i> Users</a></li>
+            <li><a class="sidebar-link" onclick="switchDbSection('stations')"><i class="fa-solid fa-charging-station"></i> Energy Stations</a></li>
+            <li><a class="sidebar-link" onclick="switchDbSection('analytics')"><i class="fa-solid fa-chart-line"></i> Charging Analytics</a></li>
+            <li><a class="sidebar-link" onclick="switchDbSection('grid')"><i class="fa-solid fa-circle-nodes"></i> Grid Monitoring</a></li>
+            <li><a class="sidebar-link" onclick="switchDbSection('reports')"><i class="fa-solid fa-file-invoice"></i> Reports</a></li>
+            <li><a class="sidebar-link" onclick="switchDbSection('settings')"><i class="fa-solid fa-sliders"></i> Settings</a></li>
+            <li style="margin-top: auto;"><a  href= "404.html"><i class="fa-solid fa-right-from-bracket"></i> Logout</a></li>
+        </ul>
+
+        <div class="sidebar-footer">
+            <i class="fa-solid fa-user-shield"></i> <span class="display-email">admin@stackly.com</span>
+        </div>
+    </aside>
+
+    <!-- Main Content Area -->
+    <main class="db-main">
+        <!-- Top bar -->
+        <header class="db-header">
+            <div style="display: flex; align-items: center; gap: 16px;">
+                <!-- Mobile sidebar toggle -->
+                <button class="btn btn-secondary btn-sm" id="sidebar-toggle" style="display: none; padding: 6px 10px;">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+                <div class="db-title" id="section-title">Energy Control Center</div>
+            </div>
+            
+            <div class="db-user-pill">
+                <div class="user-avatar"><i class="fa-solid fa-shield-halved"></i></div>
+                <span class="display-name" style="font-weight: 600;">System Operator</span>
+            </div>
+        </header>
+
+        <!-- Body content -->
+        <div class="db-body">
+            
+            <!-- SECTION 1: OVERVIEW -->
+            <div id="section-overview" class="db-section active">
+                <!-- Widgets Grid -->
+                <div class="db-widgets-grid">
+                    <div class="db-widget">
+                        <div class="widget-info">
+                            <h4>Energy Delivered</h4>
+                            <div class="widget-val" id="widget-energy">1,482 MWh</div>
+                        </div>
+                        <div class="widget-icon widget-cyan"><i class="fa-solid fa-bolt"></i></div>
+                    </div>
+                    <div class="db-widget">
+                        <div class="widget-info">
+                            <h4>Active Vehicles</h4>
+                            <div class="widget-val" id="widget-vehicles">482</div>
+                        </div>
+                        <div class="widget-icon widget-lime"><i class="fa-solid fa-car-side"></i></div>
+                    </div>
+                    <div class="db-widget">
+                        <div class="widget-info">
+                            <h4>Charging Sessions</h4>
+                            <div class="widget-val" id="widget-sessions">12,842</div>
+                        </div>
+                        <div class="widget-icon widget-purple"><i class="fa-solid fa-plug-circle-bolt"></i></div>
+                    </div>
+                    <div class="db-widget">
+                        <div class="widget-info">
+                            <h4>Carbon Reduction</h4>
+                            <div class="widget-val" id="widget-carbon">842 Tons</div>
+                        </div>
+                        <div class="widget-icon widget-lime"><i class="fa-solid fa-leaf"></i></div>
+                    </div>
+                </div>
+
+                <!-- Simulation Controls & Grid Monitor -->
+                <div class="grid-2" style="margin-bottom: 32px; align-items: stretch;">
+                    <!-- Simulation Slider Panel -->
+                    <div class="card">
+                        <h3 style="margin-bottom: 20px;"><i class="fa-solid fa-gamepad" style="color: var(--cyan);"></i> Smart Grid Control Simulator</h3>
+                        <p style="margin-bottom: 24px;">Adjust control variables to simulate smart load balancing and dynamic energy dispatching in real time.</p>
+                        
+                        <div class="sim-controls">
+                            <!-- Slider 1 -->
+                            <div class="sim-slider-group">
+                                <div class="sim-label-container">
+                                    <span class="stat-label">Grid Load Capacity</span>
+                                    <span id="val-grid-load" style="color: var(--cyan); font-weight: bold;">68%</span>
+                                </div>
+                                <input type="range" class="sim-slider" id="slider-grid-load" min="10" max="100" value="68" oninput="updateSimulation('grid-load', this.value)">
+                            </div>
+                            
+                            <!-- Slider 2 -->
+                            <div class="sim-slider-group">
+                                <div class="sim-label-container">
+                                    <span class="stat-label">Renewables Integration Priority</span>
+                                    <span id="val-renewables" style="color: var(--lime); font-weight: bold;">80%</span>
+                                </div>
+                                <input type="range" class="sim-slider" id="slider-renewables" min="0" max="100" value="80" oninput="updateSimulation('renewables', this.value)">
+                            </div>
+                            
+                            <!-- Slider 3 -->
+                            <div class="sim-slider-group">
+                                <div class="sim-label-container">
+                                    <span class="stat-label">Dynamic Demand Pricing Tariff</span>
+                                    <span id="val-tariff" style="color: var(--purple); font-weight: bold;">$0.24 /kWh</span>
+                                </div>
+                                <input type="range" class="sim-slider" id="slider-tariff" min="5" max="90" value="24" oninput="updateSimulation('tariff', this.value)">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Live Grid Waveform Monitor -->
+                    <div class="card" style="display: flex; flex-direction: column; justify-content: space-between;">
+                        <div>
+                            <h3 style="margin-bottom: 8px;"><i class="fa-solid fa-wave-square" style="color: var(--lime);"></i> Neural Grid Pulse</h3>
+                            <p>Real-time frequency balancing: <span id="grid-frequency" style="color: var(--cyan); font-family: var(--font-mono);">50.02 Hz</span></p>
+                        </div>
+
+                        <!-- Graphic monitor equalizer wave -->
+                        <div class="grid-monitor-widget">
+                            <div class="monitor-header">
+                                <span>FEEDER LINE 10A</span>
+                                <span style="color: var(--lime);">ONLINE</span>
+                            </div>
+                            <div class="monitor-wave" id="wave-container">
+                                <!-- Wave bars generated by script -->
+                            </div>
+                        </div>
+
+                        <!-- System Logs terminal terminal -->
+                        <div class="console-terminal" id="terminal-console">
+                            <div class="console-line">Grid balance system initialized. Uptime: 247:12:08</div>
+                            <div class="console-line">Solar feed substation-C detected: +240 kW inflow</div>
+                            <div class="console-line">Charging cluster-09 load balancing adjusted.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SECTION 2: USERS -->
+            <div id="section-users" class="db-section">
+                <div class="card" style="padding: 0;">
+                    <div style="padding: 24px; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--border-color);">
+                        <h3 style="margin: 0;">Registered Grid Users</h3>
+                        <span class="badge badge-cyan" id="user-count">0 Users</span>
+                    </div>
+                    <div class="db-table-wrapper">
+                        <table class="db-table" id="db-users-table">
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Email</th>
+                                    <th>Phone</th>
+                                    <th>Registration Date</th>
+                                    <th>Role</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <!-- Dynamic user rows populated via script -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SECTION 3: STATIONS -->
+            <div id="section-stations" class="db-section">
+                <div class="card" style="padding: 0;">
+                    <div style="padding: 24px; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--border-color);">
+                        <h3 style="margin: 0;">Smart Grid Charging Hubs</h3>
+                        <button class="btn btn-primary btn-sm" onclick="addMockStation()"><i class="fa-solid fa-plus"></i> Dispatch Station</button>
+                    </div>
+                    <div class="db-table-wrapper">
+                        <table class="db-table" id="db-stations-table">
+                            <thead>
+                                <tr>
+                                    <th>Hub ID</th>
+                                    <th>Location</th>
+                                    <th>Grid Feed Source</th>
+                                    <th>Current Load</th>
+                                    <th>Operational Status</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong style="color: var(--cyan);">HUB-01</strong></td>
+                                    <td>Sector 14 Grid Station</td>
+                                    <td>Renewable Solar Inflow</td>
+                                    <td>120 kW</td>
+                                    <td><span class="status-indicator status-active">Active</span></td>
+                                </tr>
+                                <tr>
+                                    <td><strong style="color: var(--cyan);">HUB-02</strong></td>
+                                    <td>Tech District Depot</td>
+                                    <td>Smart Grid Hybrid</td>
+                                    <td>450 kW</td>
+                                    <td><span class="status-indicator status-active">Active</span></td>
+                                </tr>
+                                <tr>
+                                    <td><strong style="color: var(--cyan);">HUB-03</strong></td>
+                                    <td>Highway Substation 8</td>
+                                    <td>Battery Storage Inflow</td>
+                                    <td>0 kW</td>
+                                    <td><span class="status-indicator status-inactive">Standby</span></td>
+                                </tr>
+                                <tr>
+                                    <td><strong style="color: var(--cyan);">HUB-04</strong></td>
+                                    <td>Downtown Transit Hub</td>
+                                    <td>Wind Turbine Park B</td>
+                                    <td>280 kW</td>
+                                    <td><span class="status-indicator status-active">Active</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SECTION 4: ANALYTICS -->
+            <div id="section-analytics" class="db-section">
+                <div class="grid-2" style="margin-bottom: 32px; align-items: stretch;">
+                    <div class="card">
+                        <h3>Peak Demand Curve (Dynamic Load)</h3>
+                        <p style="margin-bottom: 24px; font-size: 0.9rem;">Hourly breakdown of average grid load peaks during transportation charging spikes.</p>
+                        
+                        <!-- Simple visual graph mock with HTML/CSS -->
+                        <div style="height: 200px; display: flex; align-items: flex-end; gap: 15px; border-bottom: 2px solid var(--border-color); border-left: 2px solid var(--border-color); padding: 10px 10px 0 10px; position: relative;">
+                            <div style="flex: 1; background: var(--cyan); height: 35%; position: relative;" title="00:00 - 06:00"><span style="position: absolute; bottom:-25px; left:50%; transform:translateX(-50%); font-size:0.75rem; color:var(--text-muted);">Off-Peak</span></div>
+                            <div style="flex: 1; background: var(--purple); height: 75%; position: relative;" title="06:00 - 12:00"><span style="position: absolute; bottom:-25px; left:50%; transform:translateX(-50%); font-size:0.75rem; color:var(--text-muted);">Morning</span></div>
+                            <div style="flex: 1; background: #ff3333; height: 95%; position: relative;" title="12:00 - 18:00"><span style="position: absolute; bottom:-25px; left:50%; transform:translateX(-50%); font-size:0.75rem; color:var(--text-muted);">Peak</span></div>
+                            <div style="flex: 1; background: var(--lime); height: 50%; position: relative;" title="18:00 - 24:00"><span style="position: absolute; bottom:-25px; left:50%; transform:translateX(-50%); font-size:0.75rem; color:var(--text-muted);">Evening</span></div>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <h3>Resource Contribution Mix</h3>
+                        <p style="margin-bottom: 24px; font-size: 0.9rem;">Distribution of active generation feeds powering the mobility system.</p>
+                        
+                        <div style="display: flex; flex-direction: column; gap: 16px;">
+                            <div>
+                                <div class="stat-row" style="margin-bottom: 4px; font-size: 0.85rem;">
+                                    <span>Solar Energy Inflow</span>
+                                    <span>45%</span>
+                                </div>
+                                <div style="height: 8px; width: 100%; background: rgba(15, 23, 42, 0.08); border-radius: 4px; overflow: hidden;">
+                                    <div style="height: 100%; width: 45%; background: var(--lime);"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="stat-row" style="margin-bottom: 4px; font-size: 0.85rem;">
+                                    <span>Wind Turbine Park</span>
+                                    <span>30%</span>
+                                </div>
+                                <div style="height: 8px; width: 100%; background: rgba(15, 23, 42, 0.08); border-radius: 4px; overflow: hidden;">
+                                    <div style="height: 100%; width: 30%; background: var(--cyan);"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="stat-row" style="margin-bottom: 4px; font-size: 0.85rem;">
+                                    <span>Battery Storage Reservoirs</span>
+                                    <span>25%</span>
+                                </div>
+                                <div style="height: 8px; width: 100%; background: rgba(15, 23, 42, 0.08); border-radius: 4px; overflow: hidden;">
+                                    <div style="height: 100%; width: 25%; background: var(--purple);"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SECTION 5: GRID MONITORING -->
+            <div id="section-grid" class="db-section">
+                <div class="card" style="text-align: center;">
+                    <h3 style="margin-bottom: 16px;">Visual Grid Topology Network</h3>
+                    <p style="color: var(--text-muted); margin-bottom: 30px;">Active nodes in the current smart grid quadrant. Select nodes to isolate frequencies.</p>
+                    
+                    <svg viewBox="0 0 500 250" style="width: 100%; max-height: 350px; background: rgba(9, 90, 59, 0.03); border: 1px solid var(--border-color); border-radius: 8px; padding: 20px;">
+                        <!-- Node links -->
+                        <line x1="100" y1="125" x2="250" y2="50" stroke="var(--cyan)" stroke-width="2" stroke-dasharray="4 4" opacity="0.6"></line>
+                        <line x1="100" y1="125" x2="250" y2="200" stroke="var(--cyan)" stroke-width="2" stroke-dasharray="4 4" opacity="0.6"></line>
+                        <line x1="250" y1="50" x2="400" y2="125" stroke="var(--purple)" stroke-width="2" opacity="0.6"></line>
+                        <line x1="250" y1="200" x2="400" y2="125" stroke="var(--purple)" stroke-width="2" opacity="0.6"></line>
+                        <line x1="250" y1="50" x2="250" y2="200" stroke="var(--lime)" stroke-width="1" opacity="0.5"></line>
+
+                        <!-- Nodes -->
+                        <g class="flow-node" onclick="alert('Primary Energy Grid Node: Active (Frequency stable)')">
+                            <circle cx="100" cy="125" r="14" fill="var(--bg-graphite)" stroke="var(--cyan)" stroke-width="3"></circle>
+                            <text x="100" y="155" fill="var(--text-primary)" font-size="10" text-anchor="middle">SUBSTATION 01</text>
+                        </g>
+                        <g class="flow-node" onclick="alert('Solar Feeder Node: Inflow high')">
+                            <circle cx="250" cy="50" r="14" fill="var(--bg-graphite)" stroke="var(--lime)" stroke-width="3"></circle>
+                            <text x="250" y="25" fill="var(--text-primary)" font-size="10" text-anchor="middle">SOLAR FARM</text>
+                        </g>
+                        <g class="flow-node" onclick="alert('Storage Node: Reservoirs at 80% capacity')">
+                            <circle cx="250" cy="200" r="14" fill="var(--bg-graphite)" stroke="var(--purple)" stroke-width="3"></circle>
+                            <text x="250" y="230" fill="var(--text-primary)" font-size="10" text-anchor="middle">BATTERY MATRIX</text>
+                        </g>
+                        <g class="flow-node" onclick="alert('Charging Terminal: 482 active vehicles linked')">
+                            <circle cx="400" cy="125" r="14" fill="var(--bg-graphite)" stroke="var(--cyan)" stroke-width="3"></circle>
+                            <text x="400" y="155" fill="var(--text-primary)" font-size="10" text-anchor="middle">CHARGING HUB</text>
+                        </g>
+                    </svg>
+                </div>
+            </div>
+
+            <!-- SECTION 6: REPORTS -->
+            <div id="section-reports" class="db-section">
+                <div class="card" style="max-width: 600px;">
+                    <h3>Generate System Reports</h3>
+                    <p style="margin-bottom: 24px; font-size: 0.95rem;">Select reporting intervals and target formats to export system telemetry logs.</p>
+                    
+                    <form onsubmit="event.preventDefault(); alert('Report generation started. File download will start shortly.')">
+                        <div class="form-group">
+                            <label class="form-label">Report Type</label>
+                            <select class="form-input">
+                                <option>Grid Efficiency Analysis</option>
+                                <option>Carbon Abatement Logs</option>
+                                <option>Dynamic Pricing Logs</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Timeframe</label>
+                            <select class="form-input">
+                                <option>Last 24 Hours</option>
+                                <option>Last 7 Days</option>
+                                <option>Last Month</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="btn btn-primary"><i class="fa-solid fa-file-export"></i> Compile & Download CSV</button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- SECTION 7: SETTINGS -->
+            <div id="section-settings" class="db-section">
+                <div class="card" style="max-width: 600px;">
+                    <h3>System Control Parameters</h3>
+                    <p style="margin-bottom: 24px; font-size: 0.95rem;">Configure fail-safe grid margins and default dynamic pricing bounds.</p>
+                    
+                    <form onsubmit="event.preventDefault(); alert('Grid system parameters updated successfully.')">
+                        <div class="form-group">
+                            <label class="form-label">Fail-Safe Shutdown Threshold (Hz)</label>
+                            <input type="number" step="0.01" class="form-input" value="48.5">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Base Dynamic Pricing Bound (min/max)</label>
+                            <div class="form-row">
+                                <input type="number" step="0.01" class="form-input" value="0.12" placeholder="Min">
+                                <input type="number" step="0.01" class="form-input" value="0.75" placeholder="Max">
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-primary"><i class="fa-solid fa-floppy-disk"></i> Save Grid Protocols</button>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Scripts -->
+    <script src="shared.js"></script>
+    <script>
+        // Real-time wave rendering simulation
+        const waveContainer = document.getElementById('wave-container');
+        const numBars = 16;
+        for (let i = 0; i < numBars; i++) {
+            const bar = document.createElement('div');
+            bar.className = 'wave-bar';
+            // Set random height & animation delay
+            bar.style.height = `${Math.floor(Math.random() * 80) + 15}%`;
+            bar.style.animationDelay = `${i * 0.1}s`;
+            waveContainer.appendChild(bar);
+        }
+
+        // Live grid console simulator logs
+        const terminal = document.getElementById('terminal-console');
+        const eventLogs = [
+            "Smart routing optimised: charging efficiency increased by 3%",
+            "Substation grid demand spike detected, dynamic load balancing applied",
+            "Wind park feeder line active: +180 kW dynamic generation",
+            "Dynamic Pricing tariff increased slightly to suppress peak spike",
+            "Off-Peak vehicle charging triggers grid absorption storage",
+            "Carbon saving metric synchronized: +14.2 kg CO2 saved",
+            "Warning: grid load approaching 85% in sector highway",
+            "Grid Load balanced successfully. System stable."
+        ];
+
+        setInterval(() => {
+            if (terminal) {
+                const line = document.createElement('div');
+                line.className = 'console-line';
+                line.textContent = eventLogs[Math.floor(Math.random() * eventLogs.length)];
+                terminal.appendChild(line);
+                terminal.scrollTop = terminal.scrollHeight;
+                
+                // Keep only last 10 lines
+                if (terminal.children.length > 10) {
+                    terminal.removeChild(terminal.firstChild);
+                }
+            }
+        }, 4000);
+
+        // Sidebar Navigation controls
+        function switchDbSection(sectionId) {
+            // Update active state in sidebar links
+            const links = document.querySelectorAll('.sidebar-link');
+            links.forEach(link => {
+                link.classList.remove('active');
+            });
+            event.currentTarget.classList.add('active');
+
+            // Toggle sections
+            const sections = document.querySelectorAll('.db-section');
+            sections.forEach(sec => {
+                sec.classList.remove('active');
+            });
+            document.getElementById(`section-${sectionId}`).classList.add('active');
+
+            // Update title
+            const titles = {
+                overview: 'Energy Control Center',
+                users: 'Registered Grid Users',
+                stations: 'Grid Charging Hubs',
+                analytics: 'Telemetry Analytics',
+                grid: 'System Grid Monitor',
+                reports: 'Export Logs',
+                settings: 'System Settings'
+            };
+            document.getElementById('section-title').textContent = titles[sectionId];
+            
+            // Close sidebar on mobile after clicking
+            const sidebar = document.getElementById('db-sidebar');
+            if (sidebar.classList.contains('active')) {
+                sidebar.classList.remove('active');
+            }
+
+            // If switching to user view, populate user list
+            if (sectionId === 'users') {
+                populateUsersList();
+            }
+        }
+
+        // Sidebar Mobile Toggle
+        const sideToggle = document.getElementById('sidebar-toggle');
+        const sidebar = document.getElementById('db-sidebar');
+        if (sideToggle && sidebar) {
+            sideToggle.style.display = 'block';
+            sideToggle.addEventListener('click', () => {
+                sidebar.classList.toggle('active');
+            });
+        }
+
+        // Render dynamically user list from LocalStorage
+        function populateUsersList() {
+            const tableBody = document.querySelector('#db-users-table tbody');
+            const users = JSON.parse(localStorage.getItem('users')) || [];
+            
+            // Display user count
+            document.getElementById('user-count').textContent = `${users.length} Registered`;
+            
+            tableBody.innerHTML = '';
+            users.forEach(u => {
+                const tr = document.createElement('tr');
+                tr.innerHTML = `
+                    <td><strong>${u.name}</strong></td>
+                    <td>${u.email}</td>
+                    <td>${u.phone || 'N/A'}</td>
+                    <td>${u.joined || '2026-06-01'}</td>
+                    <td><span class="status-indicator ${u.role === 'admin' ? 'status-alert' : 'status-active'}">${u.role}</span></td>
+                `;
+                tableBody.appendChild(tr);
+            });
+        }
+
+        // Interactive control updates
+        function updateSimulation(type, value) {
+            if (type === 'grid-load') {
+                document.getElementById('val-grid-load').textContent = `${value}%`;
+                // Dynamically update active vehicles widget value as demo logic
+                const mockVehicles = Math.round(482 * (value / 68));
+                document.getElementById('widget-vehicles').textContent = mockVehicles;
+                // Add console line
+                addConsoleLine(`Grid Capacity balance adjusted manually to ${value}%`);
+            } else if (type === 'renewables') {
+                document.getElementById('val-renewables').textContent = `${value}%`;
+                // Dynamic carbon saving widget logic
+                const mockCarbon = Math.round(842 * (value / 80));
+                document.getElementById('widget-carbon').textContent = `${mockCarbon} Tons`;
+                addConsoleLine(`Renewables dispatch priority shifted to ${value}%`);
+            } else if (type === 'tariff') {
+                const price = (value / 100).toFixed(2);
+                document.getElementById('val-tariff').textContent = `$${price} /kWh`;
+                addConsoleLine(`Dynamic Tariff altered to peak rate: $${price}/kWh`);
+            }
+        }
+
+        function addConsoleLine(text) {
+            if (terminal) {
+                const line = document.createElement('div');
+                line.className = 'console-line';
+                line.textContent = text;
+                terminal.appendChild(line);
+                terminal.scrollTop = terminal.scrollHeight;
+            }
+        }
+
+        // Dynamic addition of mock stations
+        function addMockStation() {
+            const tableBody = document.querySelector('#db-stations-table tbody');
+            const stationCount = tableBody.children.length + 1;
+            const newRow = document.createElement('tr');
+            newRow.innerHTML = `
+                <td><strong style="color: var(--cyan);">HUB-0${stationCount}</strong></td>
+                <td>Coastal Grid Substation</td>
+                <td>Wave Energy Feeder</td>
+                <td>0 kW</td>
+                <td><span class="status-indicator status-inactive">Standby</span></td>
+            `;
+            tableBody.appendChild(newRow);
+            addConsoleLine(`New Charging HUB-0${stationCount} dispatched to regional grid matrix.`);
+        }
+    </script>
+</body>
+</html>

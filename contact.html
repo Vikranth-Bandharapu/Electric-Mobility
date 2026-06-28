@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Dispatch - Stackly Grid</title>
+    <meta name="description" content="Reach our network operations center, check smart grid FAQs, or submit routing inquiries.">
+    <!-- Styles -->
+    <link rel="stylesheet" href="style.css">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+
+    <!-- Scroll Progress -->
+    <div id="scrollProgress"></div>
+
+
+
+    <!-- Header Navigation -->
+    <header class="header">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <img src="assets/logo.webp" alt="Stackly Grid Logo" style="height: 38px; width: auto; display: block;" />
+            </a>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="network.html" class="nav-link">Mobility Network</a></li>
+                <li><a href="ecosystem.html" class="nav-link">Energy Ecosystem</a></li>
+                <li><a href="about.html" class="nav-link">About Us</a></li>
+                <li><a href="blog.html" class="nav-link">Blog</a></li>
+                <li><a href="contact.html" class="nav-link active">Contact</a></li>
+            </ul>
+            <div class="nav-actions" id="header-auth-actions">
+                <a href="login.html" class="btn btn-secondary btn-sm">Login</a>
+                <a href="signup.html" class="btn btn-primary btn-sm">Sign Up</a>
+            </div>
+            <button class="hamburger" id="hamburger-btn" aria-label="Toggle Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Mobile Drawer -->
+    <div class="mobile-overlay" id="mobile-overlay"></div>
+    <div class="mobile-menu" id="mobile-menu">
+        <ul class="nav-menu">
+            <li><a href="index.html" class="nav-link">Home</a></li>
+            <li><a href="network.html" class="nav-link">Mobility Network</a></li>
+            <li><a href="ecosystem.html" class="nav-link">Energy Ecosystem</a></li>
+            <li><a href="about.html" class="nav-link">About Us</a></li>
+            <li><a href="blog.html" class="nav-link">Blog</a></li>
+            <li><a href="contact.html" class="nav-link active">Contact</a></li>
+        </ul>
+        <div class="nav-actions" id="mobile-auth-actions">
+            <a href="login.html" class="btn btn-secondary">Login</a>
+            <a href="signup.html" class="btn btn-primary">Sign Up</a>
+        </div>
+    </div>
+
+    <!-- SECTION 1: Hero Section -->
+    <section class="page-hero">
+        <div class="container">
+            <span class="badge badge-purple">Grid Operations Center</span>
+            <h1>Contact Dispatch</h1>
+            <p>Connect with our network engineers or file telemetry routing inquiries. We are online 24/7/365.</p>
+        </div>
+    </section>
+
+    <!-- Content Sections 2 & 3 Combined Layout -->
+    <section class="section-padding" style="border-bottom: 1px solid var(--border-color);">
+        <div class="container contact-grid">
+            
+            <!-- SECTION 2: Contact Details -->
+            <div class="contact-info">
+                <span class="badge badge-cyan">Channels</span>
+                <h2>NOC Dispatch Channels</h2>
+                <p style="color: var(--text-muted); margin-bottom: 12px;">Contact details for grid emergency dispatchers and enterprise telemetry integration services.</p>
+                
+                <div class="contact-info-card">
+                    <div class="info-icon"><i class="fa-solid fa-building-shield"></i></div>
+                    <div class="info-details">
+                        <h4>Headquarters Operations</h4>
+                        <p>120 Energy Flow Parkway, Suite 500<br>Silicon Valley, CA 94025</p>
+                    </div>
+                </div>
+                <div class="contact-info-card">
+                    <div class="info-icon"><i class="fa-solid fa-headset"></i></div>
+                    <div class="info-details">
+                        <h4>Dispatcher Desk</h4>
+                        <p>+1 (800) 555-GRID (4743)</p>
+                        <p><a href="mailto:dispatch@stacklygrid.com">dispatch@stacklygrid.com</a></p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SECTION 3: Inquiry Form -->
+            <div class="card">
+                <h3>Submit Network Inquiry</h3>
+                <p style="color: var(--text-muted); margin-bottom: 24px;">Please supply your EV fleet identifier or grid substation node when submitting.</p>
+                
+                <div class="form-success" id="contact-success">
+                    Your inquiry has been routed successfully. Grid engineers will respond shortly.
+                </div>
+
+                <form id="contact-form" novalidate>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="c-name" class="form-label">Your Name</label>
+                            <input type="text" id="c-name" class="form-input" placeholder="e.g. Alex" required>
+                            <div class="form-error" id="c-name-error">Name is required.</div>
+                        </div>
+                        <div class="form-group">
+                            <label for="c-email" class="form-label">Email Address</label>
+                            <input type="email" id="c-email" class="form-input" placeholder="name@domain.com" required>
+                            <div class="form-error" id="c-email-error">Please enter a valid email.</div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="c-subject" class="form-label">Inquiry Subject</label>
+                        <select id="c-subject" class="form-input">
+                            <option>EV Fleet Telemetry Integration</option>
+                            <option>Micro-Grid Substation Connection</option>
+                            <option>Dynamic Pricing Tariff Query</option>
+                            <option>Security/Vulnerability Alert</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="c-msg" class="form-label">Inquiry Details</label>
+                        <textarea id="c-msg" class="form-input" placeholder="Describe your grid routing requirements..." required></textarea>
+                        <div class="form-error" id="c-msg-error">Message details are required.</div>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary"><i class="fa-solid fa-paper-plane"></i> Dispatch Inquiry</button>
+                </form>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- SECTION 4: FAQ (Accordion Blocks) -->
+    <section class="section-padding bg-graphite-light" id="faq" style="border-bottom: 1px solid var(--border-color);">
+        <div class="container" style="max-width: 800px;">
+            <div class="section-header">
+                <span class="badge badge-purple">Knowledge base</span>
+                <h2>Frequently Resolved Queries</h2>
+                <p>Answers to common questions regarding dynamic routing and battery integration.</p>
+            </div>
+
+            <div class="faq-container">
+                <!-- FAQ Item 1 -->
+                <div class="faq-item">
+                    <button class="faq-trigger" onclick="toggleFaq(this)">
+                        <span>What is Vehicle-to-Grid (V2G) mobility?</span>
+                        <i class="fa-solid fa-chevron-down faq-icon"></i>
+                    </button>
+                    <div class="faq-content">
+                        <p>Vehicle-to-Grid (V2G) is a bi-directional electricity routing system that enables electric vehicles to return power back to active substations. This converts parked EVs into a decentralized battery grid buffer, helping offset local load shortages.</p>
+                    </div>
+                </div>
+                
+                <!-- FAQ Item 2 -->
+                <div class="faq-item">
+                    <button class="faq-trigger" onclick="toggleFaq(this)">
+                        <span>How is the dynamic charging tariff calculated?</span>
+                        <i class="fa-solid fa-chevron-down faq-icon"></i>
+                    </button>
+                    <div class="faq-content">
+                        <p>Pricing varies according to active grid demand and renewable feed availability. When local wind turbine output is high and demand is low, the tariff drops (Off-Peak discounts). When load peaks, pricing rises to discourage non-essential vehicle charging.</p>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 3 -->
+                <div class="faq-item">
+                    <button class="faq-trigger" onclick="toggleFaq(this)">
+                        <span>Can I register any EV model under My Vehicles?</span>
+                        <i class="fa-solid fa-chevron-down faq-icon"></i>
+                    </button>
+                    <div class="faq-content">
+                        <p>Yes. Any electric vehicle utilizing standard CCS or NACS charging protocols is supported. Direct battery balancing is active on all compatible Smart Grid stations.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 5: Support Channels -->
+    <section class="section-padding" style="border-bottom: 1px solid var(--border-color);">
+        <div class="container">
+            <div class="section-header">
+                <span class="badge badge-lime">Uptime channels</span>
+                <h2>Grid Support Channels</h2>
+                <p>Telemetry channels to check grid loads and dispatch notifications directly.</p>
+            </div>
+
+            <div class="grid-3">
+                <div class="card" style="text-align: center;">
+                    <div class="card-icon card-icon-cyan" style="margin:0 auto 20px;"><i class="fa-solid fa-chart-line"></i></div>
+                    <h3>Live Grid Telemetry</h3>
+                    <p style="font-size: 0.9rem; margin-bottom: 16px;">Real-time feed tracking dynamic frequencies and line losses.</p>
+                    <a href="404.html" class="btn btn-secondary btn-sm">Telemetry Feed</a>
+                </div>
+                <div class="card" style="text-align: center;">
+                    <div class="card-icon card-icon-lime" style="margin:0 auto 20px;"><i class="fa-solid fa-code"></i></div>
+                    <h3>Developer API status</h3>
+                    <p style="font-size: 0.9rem; margin-bottom: 16px;">Telemetry parameters and sandbox APIs for dynamic EV routing.</p>
+                    <a href="404.html" class="btn btn-secondary btn-sm btn-dead">Developer Sand</a>
+                </div>
+                <div class="card" style="text-align: center;">
+                    <div class="card-icon card-icon-purple" style="margin:0 auto 20px;"><i class="fa-solid fa-triangle-exclamation"></i></div>
+                    <h3>Incident Response</h3>
+                    <p style="font-size: 0.9rem; margin-bottom: 16px;">Report localized substation failures or transformer overloads directly.</p>
+                    <a href="404.html" class="btn btn-secondary btn-sm btn-dead">Submit Ticket</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 6: CTA -->
+    <section class="cta-section">
+        <div class="container cta-content">
+            <h2>Ready to secure your energy?</h2>
+            <p>Sign up to view active station maps and claim off-peak charging pricing credits today.</p>
+            <div style="display: flex; gap: 16px; justify-content: center;">
+                <a href="404.html" class="btn btn-primary"><i class="fa-solid fa-circle-check"></i> Register EV Owner</a>
+                <a href="404.html" class="btn btn-secondary">Access Control Center</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-top-grid">
+                <!-- Brand Column -->
+                <div class="footer-brand">
+                    <a href="index.html" class="logo">
+                        <img src="assets/logo.webp" alt="Stackly Grid Logo" style="height: 38px; width: auto; display: block;" />
+                    </a>
+                    <p>Decentralized energy networks regulating future electric vehicle systems to secure smart grid stability and carbon abatement.</p>
+                    <div class="social-links">
+                        <a href="404.html" class="social-link" aria-label="X (formerly Twitter)"><i class="fa-brands fa-x-twitter"></i></a>
+                        <a href="404.html" class="social-link" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                        <a href="404.html" class="social-link" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+                        <a href="404.html" class="social-link" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                    </div>
+                </div>
+                
+                <!-- Platform Links Column -->
+              <div>
+                    <h4 class="footer-title">Platform</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home System</a></li>
+                        <li><a href="network.html">Mobility Network</a></li>
+                        <li><a href="ecosystem.html">Energy Ecosystem</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="blog.html">Blog Insights</a></li>
+                       
+                    </ul>
+                </div>
+                
+                <!-- Control Hub Column -->
+                <div>
+                    <h4 class="footer-title">Control Hub</h4>
+                    <ul class="footer-links">
+                        <li><a href="login.html">Member Login</a></li>
+                        <li><a href="signup.html">Create Account</a></li>
+                        <li><a href="admin.html">Control Center</a></li>
+                        <li><a href="user.html">Personal Hub</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                       
+                    </ul>
+                </div>
+                
+                
+                <!-- Contact Column -->
+                <div>
+                    <h4 class="footer-title">Contact Info</h4>
+                    <ul class="footer-contact-list">
+                        <li>
+                            <i class="fa-solid fa-map-marker-alt"></i>
+                            <span>882 Tesla Parkway, Suite 400, Austin, TX 78725</span>
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-phone-alt"></i>
+                            <span><a href="tel:+18005550199">+1 (800) 555-0199</a></span>
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-envelope"></i>
+                            <span><a href="mailto:support@stacklygrid.com">support@stacklygrid.com</a></span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2026 Stackly. All energy systems secure.</p>
+                <div class="footer-bottom-links">
+                    <a href="404.html">Security Protocol</a>
+                    <a href="404.html">Privacy Standard</a>
+                    <a href="404.html">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll to Top Button -->
+    <button id="scrollTop" aria-label="Scroll to top"><i class="fa-solid fa-chevron-up"></i></button>
+
+    <!-- Scripts -->
+
+    <!-- Scripts -->
+    <script src="shared.js"></script>
+    <script>
+        // Toggle Accordion FAQ blocks
+        function toggleFaq(button) {
+            const item = button.parentElement;
+            const content = button.nextElementSibling;
+            
+            // Check if already active
+            const isActive = item.classList.contains('active');
+            
+            // Close all items
+            const allItems = document.querySelectorAll('.faq-item');
+            allItems.forEach(i => {
+                i.classList.remove('active');
+                i.querySelector('.faq-content').style.maxHeight = null;
+            });
+            
+            // Open clicked if not previously active
+            if (!isActive) {
+                item.classList.add('active');
+                content.style.maxHeight = content.scrollHeight + 'px';
+            }
+        }
+
+        // Contact form validation
+        document.getElementById('contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Reset errors
+            document.querySelectorAll('.form-error').forEach(err => err.style.display = 'none');
+            document.querySelectorAll('.form-input').forEach(inp => inp.style.borderColor = 'var(--border-color)');
+            
+            const name = document.getElementById('c-name').value.trim();
+            const email = document.getElementById('c-email').value.trim();
+            const message = document.getElementById('c-msg').value.trim();
+            const subject = document.getElementById('c-subject').value;
+            
+            let isValid = true;
+            
+            if (!name) {
+                document.getElementById('c-name-error').style.display = 'block';
+                document.getElementById('c-name').style.borderColor = '#ff3333';
+                isValid = false;
+            }
+            
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!email || !emailRegex.test(email)) {
+                document.getElementById('c-email-error').style.display = 'block';
+                document.getElementById('c-email').style.borderColor = '#ff3333';
+                isValid = false;
+            }
+            
+            if (!message) {
+                document.getElementById('c-msg-error').style.display = 'block';
+                document.getElementById('c-msg').style.borderColor = '#ff3333';
+                isValid = false;
+            }
+            
+            if (!isValid) return;
+            
+            // Save to localStorage
+            const inquiries = JSON.parse(localStorage.getItem('inquiries')) || [];
+            inquiries.push({
+                name,
+                email,
+                subject,
+                message,
+                timestamp: new Date().toISOString()
+            });
+            localStorage.setItem('inquiries', JSON.stringify(inquiries));
+            
+            // Show success
+            document.getElementById('contact-success').style.display = 'block';
+            document.getElementById('contact-form').reset();
+            
+            setTimeout(() => {
+                document.getElementById('contact-success').style.display = 'none';
+            }, 3000);
+        });
+    </script>
+</body>
+</html>

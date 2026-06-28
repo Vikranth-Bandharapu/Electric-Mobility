@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up - Stackly Grid</title>
+    <meta name="description" content="Join the intelligent electrical mobility network. Create an account today.">
+    <!-- Styles -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body class="auth-body">
+
+    <!-- Header Navigation -->
+    <header class="header">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <img src="assets/logo.webp" alt="Stackly Grid Logo" style="height: 38px; width: auto; display: block;" />
+            </a>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="network.html" class="nav-link">Mobility Network</a></li>
+                <li><a href="ecosystem.html" class="nav-link">Energy Ecosystem</a></li>
+                <li><a href="about.html" class="nav-link">About Us</a></li>
+                <li><a href="blog.html" class="nav-link">Blog</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="nav-actions">
+                <a href="login.html" class="btn btn-secondary btn-sm">Login</a>
+                <a href="signup.html" class="btn btn-primary btn-sm">Sign Up</a>
+            </div>
+            <button class="hamburger" id="hamburger-btn" aria-label="Toggle Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Mobile Drawer -->
+    <div class="mobile-overlay" id="mobile-overlay"></div>
+    <div class="mobile-menu" id="mobile-menu">
+        <ul class="nav-menu">
+            <li><a href="index.html" class="nav-link">Home</a></li>
+            <li><a href="network.html" class="nav-link">Mobility Network</a></li>
+            <li><a href="ecosystem.html" class="nav-link">Energy Ecosystem</a></li>
+            <li><a href="about.html" class="nav-link">About Us</a></li>
+            <li><a href="blog.html" class="nav-link">Blog</a></li>
+            <li><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+        <div class="nav-actions">
+            <a href="login.html" class="btn btn-secondary">Login</a>
+            <a href="signup.html" class="btn btn-primary">Sign Up</a>
+        </div>
+    </div>
+
+    <!-- Main Wrapper -->
+    <main class="auth-wrap">
+        <!-- Auth Card -->
+        <div class="auth-card-premium" style="margin-top: 100px;">
+            <!-- Profile icon inside the card -->
+            <div class="auth-user-icon">
+                <i class="fa-regular fa-user"></i>
+            </div>
+
+            <h2>Join the Network</h2>
+
+            <form id="signup-form" novalidate>
+                <!-- Name Input Group -->
+                <div class="auth-input-group" id="name-group">
+                    <i class="fa fa-user"></i>
+                    <input type="text" id="name" placeholder="Full Name" required>
+                </div>
+                <div class="auth-error-msg" id="name-error">Please enter your name.</div>
+
+                <!-- Email Input Group -->
+                <div class="auth-input-group" id="email-group">
+                    <i class="fa fa-envelope"></i>
+                    <input type="email" id="email" placeholder="Email Address" required>
+                </div>
+                <div class="auth-error-msg" id="email-error">Please enter a valid email.</div>
+
+                <!-- Phone Input Group -->
+                <div class="auth-input-group" id="phone-group">
+                    <i class="fa fa-phone"></i>
+                    <input type="tel" id="phone" placeholder="Phone Number (10 digits)" required>
+                </div>
+                <div class="auth-error-msg" id="phone-error">Please enter a valid 10-digit phone number.</div>
+
+                <!-- Password Input Group -->
+                <div class="auth-input-group" id="pass-group">
+                    <i class="fa fa-lock"></i>
+                    <input type="password" id="password" placeholder="Password (Min. 6 chars)" required>
+                    <i class="fa-regular fa-eye-slash toggle-password" id="togglePassword"></i>
+                </div>
+                <div class="auth-error-msg" id="password-error">Password must be at least 6 characters.</div>
+
+                <!-- Confirm Password Input Group -->
+                <div class="auth-input-group" id="confirm-group">
+                    <i class="fa fa-lock"></i>
+                    <input type="password" id="confirmPassword" placeholder="Confirm Password" required>
+                    <i class="fa-regular fa-eye-slash toggle-password" id="toggleConfirmPassword"></i>
+                </div>
+                <div class="auth-error-msg" id="confirmPassword-error">Passwords do not match.</div>
+
+                <!-- Terms Option -->
+                <div class="auth-options">
+                    <label>
+                        <input type="checkbox" id="terms"> I agree to the Terms & Conditions
+                    </label>
+                </div>
+                <div class="auth-error-msg" id="terms-error" style="margin-top: -12px; margin-bottom: 16px;">You must accept the terms to proceed.</div>
+
+                <button type="submit" class="auth-submit-btn">
+                    <i class="fa-solid fa-user-plus"></i> Create Account
+                </button>
+            </form>
+
+            <div class="auth-link">
+                Already registered? <a href="login.html">Login here</a>
+            </div>
+        </div>
+    </main>
+
+    <!-- Scripts -->
+    <script src="shared.js"></script>
+    <script>
+        document.getElementById('signup-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            // Reset error states
+            const errors = document.querySelectorAll('.auth-error-msg');
+            errors.forEach(err => err.style.display = 'none');
+            const groups = document.querySelectorAll('.auth-input-group');
+            groups.forEach(group => group.classList.remove('invalid'));
+
+            // Get field values
+            const name = document.getElementById('name').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const phone = document.getElementById('phone').value.trim();
+            const password = document.getElementById('password').value;
+            const confirmPassword = document.getElementById('confirmPassword').value;
+            const termsChecked = document.getElementById('terms').checked;
+
+            let isValid = true;
+
+            // Name validation
+            if (!name) {
+                showError('name', 'Name is required.');
+                isValid = false;
+            } else if (name.length < 2) {
+                showError('name', 'Name must be at least 2 characters.');
+                isValid = false;
+            }
+
+            // Email validation
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!email) {
+                showError('email', 'Please enter your email.');
+                isValid = false;
+            } else if (!emailRegex.test(email)) {
+                showError('email', 'Please enter a valid email address.');
+                isValid = false;
+            }
+
+            // Phone validation (10 digits)
+            const phoneRegex = /^\d{10}$/;
+            if (!phone) {
+                showError('phone', 'Phone number is required.');
+                isValid = false;
+            } else if (!phoneRegex.test(phone)) {
+                showError('phone', 'Please enter a valid 10-digit phone number.');
+                isValid = false;
+            }
+
+            // Password validation (min 6 characters)
+            if (!password) {
+                showError('password', 'Password is required.');
+                isValid = false;
+            } else if (password.length < 6) {
+                showError('password', 'Password must be at least 6 characters long.');
+                isValid = false;
+            }
+
+            // Confirm password validation
+            if (!confirmPassword) {
+                showError('confirmPassword', 'Please confirm your password.');
+                isValid = false;
+            } else if (password !== confirmPassword) {
+                showError('confirmPassword', 'Passwords do not match.');
+                isValid = false;
+            }
+
+            // Terms validation
+            if (!termsChecked) {
+                document.getElementById('terms-error').style.display = 'block';
+                isValid = false;
+            }
+
+            if (!isValid) return;
+
+            // Save registered details temporarily (same functionality as waste management / adventure sports)
+            localStorage.setItem('em_reg_email', email);
+            localStorage.setItem('em_reg_name', name);
+
+            // Redirect to login with successful registration query parameter
+            window.location.href = 'login.html?registered=true';
+        });
+
+        function showError(fieldId, message) {
+            const group = document.getElementById(fieldId + '-group');
+            const errorDiv = document.getElementById(fieldId + '-error');
+            if (group) group.classList.add('invalid');
+            if (errorDiv) {
+                errorDiv.textContent = message;
+                errorDiv.style.display = 'block';
+            }
+        }
+
+        // Toggle password visibility
+        const togglePassword = document.getElementById("togglePassword");
+        const passwordInput = document.getElementById("password");
+        if (togglePassword && passwordInput) {
+            togglePassword.addEventListener("click", function () {
+                const type = passwordInput.getAttribute("type") === "password" ? "text" : "password";
+                passwordInput.setAttribute("type", type);
+                this.classList.toggle("fa-eye");
+                this.classList.toggle("fa-eye-slash");
+            });
+        }
+
+        const toggleConfirmPassword = document.getElementById("toggleConfirmPassword");
+        const confirmPasswordInput = document.getElementById("confirmPassword");
+        if (toggleConfirmPassword && confirmPasswordInput) {
+            toggleConfirmPassword.addEventListener("click", function () {
+                const type = confirmPasswordInput.getAttribute("type") === "password" ? "text" : "password";
+                confirmPasswordInput.setAttribute("type", type);
+                this.classList.toggle("fa-eye");
+                this.classList.toggle("fa-eye-slash");
+            });
+        }
+    </script>
+</body>
+</html>

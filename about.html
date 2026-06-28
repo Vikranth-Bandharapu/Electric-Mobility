@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Stackly Grid</title>
+    <meta name="description" content="Discover the story, mission, and leadership team behind Stackly Grid's connected mobility ecosystem.">
+    <!-- Styles -->
+    <link rel="stylesheet" href="style.css">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+
+    <!-- Header Navigation -->
+    <header class="header">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <img src="assets/logo.webp" alt="Stackly Grid Logo" style="height: 38px; width: auto; display: block;" />
+            </a>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="network.html" class="nav-link">Mobility Network</a></li>
+                <li><a href="ecosystem.html" class="nav-link">Energy Ecosystem</a></li>
+                 <li><a href="about.html" class="nav-link active">About Us</a></li>
+                <li><a href="blog.html" class="nav-link">Blog</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="nav-actions" id="header-auth-actions">
+                <a href="login.html" class="btn btn-secondary btn-sm">Login</a>
+                <a href="signup.html" class="btn btn-primary btn-sm">Sign Up</a>
+            </div>
+            <button class="hamburger" id="hamburger-btn" aria-label="Toggle Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Mobile Drawer -->
+    <div class="mobile-overlay" id="mobile-overlay"></div>
+    <div class="mobile-menu" id="mobile-menu">
+        <ul class="nav-menu">
+            <li><a href="index.html" class="nav-link">Home</a></li>
+            <li><a href="network.html" class="nav-link">Mobility Network</a></li>
+            <li><a href="ecosystem.html" class="nav-link">Energy Ecosystem</a></li>
+             <li><a href="about.html" class="nav-link active">About Us</a></li>
+            <li><a href="blog.html" class="nav-link">Blog</a></li>
+            <li><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+        <div class="nav-actions" id="mobile-auth-actions">
+            <a href="login.html" class="btn btn-secondary">Login</a>
+            <a href="signup.html" class="btn btn-primary">Sign Up</a>
+        </div>
+    </div>
+
+    <!-- SECTION 1: Hero Section -->
+    <section class="page-hero">
+        <div class="container">
+            <span class="badge badge-lime">Autonomous Energy Networks</span>
+            <h1>Empowering Clean Transit</h1>
+            <p>Stackly Grid builds bidirectional charging networks, microgrid balancing buffers, and load routing software designed to support tomorrow's cities.</p>
+        </div>
+    </section>
+
+    <!-- SECTION 2: STATS & STORY -->
+    <section class="section-padding">
+        <div class="container">
+            <div class="grid-2" style="gap: 60px; align-items: center;">
+                <div>
+                    <span class="badge badge-cyan">Our Story</span>
+                    <h2 style="font-size: 2.3rem; margin-bottom: 20px;">The Smart Grid Revolution</h2>
+                    <p style="margin-bottom: 20px; font-size: 1.05rem; line-height: 1.7; color: var(--text-primary);">
+                        Stackly Grid was founded in 2021 by a consortium of smart grid engineers, battery chemists, and urban planning logistics experts. Our core thesis was simple: EV adoption shouldn't stress local municipal transformers, but should instead turn vehicles into active assets that stabilize the grid.
+                    </p>
+                    <p style="margin-bottom: 20px; font-size: 0.95rem; color: var(--text-muted);">
+                        By developing high-capacity bidirectional charging corridors, dynamic solar canopies, and automated load dispatch systems, we enable seamless coordination between clean generation sources and mobile transport loads.
+                    </p>
+                </div>
+                
+                <div class="grid-2" style="gap: 25px;">
+                    <!-- Stat Card 1 -->
+                    <div class="card" style="padding: 30px; text-align: center;">
+                        <div class="card-icon card-icon-lime" style="margin: 0 auto 15px;"><i class="fa-solid fa-seedling"></i></div>
+                        <h3 style="font-size: 32px; color: var(--lime); margin-bottom: 5px; font-family: var(--font-mono);">142K+</h3>
+                        <p style="font-size: 13px; color: var(--text-muted);">Carbon Offsets (Tons)</p>
+                    </div>
+                    <!-- Stat Card 2 -->
+                    <div class="card" style="padding: 30px; text-align: center;">
+                        <div class="card-icon card-icon-cyan" style="margin: 0 auto 15px;"><i class="fa-solid fa-car"></i></div>
+                        <h3 style="font-size: 32px; color: var(--cyan); margin-bottom: 5px; font-family: var(--font-mono);">12K+</h3>
+                        <p style="font-size: 13px; color: var(--text-muted);">Active Grid Nodes</p>
+                    </div>
+                    <!-- Stat Card 3 -->
+                    <div class="card" style="padding: 30px; text-align: center;">
+                        <div class="card-icon card-icon-cyan" style="margin: 0 auto 15px;"><i class="fa-solid fa-charging-station"></i></div>
+                        <h3 style="font-size: 32px; color: var(--cyan); margin-bottom: 5px; font-family: var(--font-mono);">850+</h3>
+                        <p style="font-size: 13px; color: var(--text-muted);">Smart Chargers</p>
+                    </div>
+                    <!-- Stat Card 4 -->
+                    <div class="card" style="padding: 30px; text-align: center;">
+                        <div class="card-icon card-icon-lime" style="margin: 0 auto 15px;"><i class="fa-solid fa-bolt"></i></div>
+                        <h3 style="font-size: 32px; color: var(--lime); margin-bottom: 5px; font-family: var(--font-mono);">45+</h3>
+                        <p style="font-size: 13px; color: var(--text-muted);">MWh Grid Storage</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 3: LEADERSHIP TEAM -->
+    <section class="section-padding bg-graphite-light" style="border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color);">
+        <div class="container">
+            <div class="section-header">
+                <span class="badge badge-purple">Grid Officers</span>
+                <h2>Our Operations Leadership</h2>
+                <p>Meet the engineers and scientists directing our decentralized smart grid networks.</p>
+            </div>
+
+            <div class="grid-3">
+                <div class="card" style="text-align: center;">
+                    <div style="width: 120px; height: 120px; border-radius: 50%; background-image: url('assets/image\ 2.webp'); background-size: cover; background-position: center; margin: 0 auto 20px; border: 3px solid var(--cyan);"></div>
+                    <h3>Dr. Evelyn Reed</h3>
+                    <p style="color: var(--lime); font-size: 0.85rem; font-weight: 600; margin-bottom: 12px;">Chief Grid Architect</p>
+                    <p style="font-size: 0.9rem; color: var(--text-muted);">Former MIT energy researcher specializing in high-throughput load routing topologies.</p>
+                </div>
+                <div class="card" style="text-align: center;">
+                    <div style="width: 120px; height: 120px; border-radius: 50%; background-image: url('assets/image\ 3.webp'); background-size: cover; background-position: center; margin: 0 auto 20px; border: 3px solid var(--lime);"></div>
+                    <h3>Marcus Vance</h3>
+                    <p style="color: var(--lime); font-size: 0.85rem; font-weight: 600; margin-bottom: 12px;">Director of Substation Operations</p>
+                    <p style="font-size: 0.9rem; color: var(--text-muted);">Oversees edge hardware installations, fluid cooled charging systems, and physical safety grids.</p>
+                </div>
+                <div class="card" style="text-align: center;">
+                    <div style="width: 120px; height: 120px; border-radius: 50%; background-image: url('assets/image\ 4.webp'); background-size: cover; background-position: center; margin: 0 auto 20px; border: 3px solid var(--purple);"></div>
+                    <h3>Sarah Jenkins</h3>
+                    <p style="color: var(--lime); font-size: 0.85rem; font-weight: 600; margin-bottom: 12px;">VP of Software Engineering</p>
+                    <p style="font-size: 0.9rem; color: var(--text-muted);">Leads the development of dynamic pricing algorithms, mobile telemetry nodes, and local V2G schedules.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-top-grid">
+                <!-- Brand Column -->
+                <div class="footer-brand">
+                    <a href="index.html" class="logo">
+                        <img src="assets/logo.webp" alt="Stackly Grid Logo" style="height: 38px; width: auto; display: block;" />
+                    </a>
+                    <p>Decentralized energy networks regulating future electric vehicle systems to secure smart grid stability and carbon abatement.</p>
+                    <div class="social-links">
+                        <a href="404.html" class="social-link" aria-label="X (formerly Twitter)"><i class="fa-brands fa-x-twitter"></i></a>
+                        <a href="404.html" class="social-link" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                        <a href="404.html" class="social-link" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+                        <a href="404.html" class="social-link" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                    </div>
+                </div>
+                
+                <!-- Platform Links Column -->
+                
+                <div>
+                    <h4 class="footer-title">Platform</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home System</a></li>
+                        <li><a href="network.html">Mobility Network</a></li>
+                        <li><a href="ecosystem.html">Energy Ecosystem</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="blog.html">Blog Insights</a></li>
+                       
+                    </ul>
+                </div>
+                
+                <!-- Control Hub Column -->
+                <div>
+                    <h4 class="footer-title">Control Hub</h4>
+                    <ul class="footer-links">
+                        <li><a href="login.html">Member Login</a></li>
+                        <li><a href="signup.html">Create Account</a></li>
+                        <li><a href="admin.html">Control Center</a></li>
+                        <li><a href="user.html">Personal Hub</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                       
+                    </ul>
+                </div>
+                
+                
+                <!-- Contact Column -->
+                <div>
+                    <h4 class="footer-title">Contact Info</h4>
+                    <ul class="footer-contact-list">
+                        <li>
+                            <i class="fa-solid fa-map-marker-alt"></i>
+                            <span>882 Tesla Parkway, Suite 400, Austin, TX 78725</span>
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-phone-alt"></i>
+                            <span><a href="tel:+18005550199">+1 (800) 555-0199</a></span>
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-envelope"></i>
+                            <span><a href="mailto:support@stacklygrid.com">support@stacklygrid.com</a></span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2026 Stackly. All energy systems secure.</p>
+                <div class="footer-bottom-links">
+                    <a href="404.html">Security Protocol</a>
+                    <a href="404.html">Privacy Standard</a>
+                    <a href="404.html">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="shared.js"></script>
+    </body>
+</html>

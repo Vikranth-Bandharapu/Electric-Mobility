@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Energy Ecosystem - Stackly Grid</title>
+    <meta name="description" content="Discover Stackly Grid's integration of solar, wind, battery matrices, and V2G energy systems.">
+    <!-- Styles -->
+    <link rel="stylesheet" href="style.css">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+
+    <!-- Scroll Progress -->
+    <div id="scrollProgress"></div>
+
+
+
+    <!-- Header Navigation -->
+    <header class="header">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <img src="assets/logo.webp" alt="Stackly Grid Logo" style="height: 38px; width: auto; display: block;" />
+            </a>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="network.html" class="nav-link">Mobility Network</a></li>
+                <li><a href="ecosystem.html" class="nav-link active">Energy Ecosystem</a></li>
+                <li><a href="about.html" class="nav-link">About Us</a></li>
+                <li><a href="blog.html" class="nav-link">Blog</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="nav-actions" id="header-auth-actions">
+                <a href="login.html" class="btn btn-secondary btn-sm">Login</a>
+                <a href="signup.html" class="btn btn-primary btn-sm">Sign Up</a>
+            </div>
+            <button class="hamburger" id="hamburger-btn" aria-label="Toggle Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Mobile Drawer -->
+    <div class="mobile-overlay" id="mobile-overlay"></div>
+    <div class="mobile-menu" id="mobile-menu">
+        <ul class="nav-menu">
+            <li><a href="index.html" class="nav-link">Home</a></li>
+            <li><a href="network.html" class="nav-link">Mobility Network</a></li>
+            <li><a href="ecosystem.html" class="nav-link active">Energy Ecosystem</a></li>
+            <li><a href="about.html" class="nav-link">About Us</a></li>
+            <li><a href="blog.html" class="nav-link">Blog</a></li>
+            <li><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+        <div class="nav-actions" id="mobile-auth-actions">
+            <a href="login.html" class="btn btn-secondary">Login</a>
+            <a href="signup.html" class="btn btn-primary">Sign Up</a>
+        </div>
+    </div>
+
+    <!-- SECTION 1: Hero Section -->
+    <section class="page-hero">
+        <div class="container">
+            <span class="badge badge-lime">Clean Energy Circulation</span>
+            <h1>The Energy Ecosystem</h1>
+            <p>Integrating zero-carbon electricity generation, megawatt grid buffers, and cognitive battery management system (BMS) controls.</p>
+        </div>
+    </section>
+
+    <!-- SECTION 2: Renewable Sources -->
+    <section class="section-padding" style="border-bottom: 1px solid var(--border-color);">
+        <div class="container">
+            <div class="grid-2">
+                <div>
+                    <span class="badge badge-lime">Generation Feeds</span>
+                    <h2 style="font-size: 2.3rem; margin-bottom: 20px;">Renewable Generation Matrix</h2>
+                    <p style="color: var(--text-muted); margin-bottom: 20px;">
+                        To secure a true net-zero future, our grid relies entirely on wind turbines, industrial solar fields, and regional geothermal systems. We route surplus energy to storage reservoirs to bridge the solar duct curve.
+                    </p>
+                    <p style="color: var(--text-muted); margin-bottom: 30px;">
+                        Each renewable station has dedicated smart meters that forecast output using localized meteorological data, ensuring smooth energy reserves.
+                    </p>
+                    <a href="404.html" class="btn btn-primary"><i class="fa-solid fa-solar-panel"></i> Trace Generation feeds</a>
+                </div>
+                <div class="grid-2">
+                    <div class="card" style="padding: 24px;">
+                        <div class="card-icon card-icon-lime"><i class="fa-solid fa-sun"></i></div>
+                        <h3>Solar Arrays</h3>
+                        <p style="font-size: 0.9rem;">Photovoltaic tracking arrays optimizing daylight inflow.</p>
+                    </div>
+                    <div class="card" style="padding: 24px;">
+                        <div class="card-icon card-icon-cyan"><i class="fa-solid fa-wind"></i></div>
+                        <h3>Wind Farms</h3>
+                        <p style="font-size: 0.9rem;">Offshore turbine loops providing stable nighttime reserves.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 3: Energy Distribution -->
+    <section class="section-padding bg-graphite-light" style="border-bottom: 1px solid var(--border-color);">
+        <div class="container">
+            <div class="section-header">
+                <span class="badge badge-purple">Dynamic Routing</span>
+                <h2>Zero-Carbon Energy Balancing</h2>
+                <p>Ensuring constant voltage and frequency stability through smart load redirection and microgrid isolations.</p>
+            </div>
+
+            <div class="grid-3">
+                <div class="card">
+                    <div class="card-icon card-icon-cyan"><i class="fa-solid fa-network-wired"></i></div>
+                    <h3>Cognitive Dispatching</h3>
+                    <p>Redirects energy to grid nodes experiencing localized transportation spikes.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon card-icon-lime"><i class="fa-solid fa-shield-heart"></i></div>
+                    <h3>Line Fail-Safes</h3>
+                    <p>Enforces micro-isolation to contain line overloads and secure regional grid nodes.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon card-icon-purple"><i class="fa-solid fa-arrows-spin"></i></div>
+                    <h3>V2G Stabilization</h3>
+                    <p>Utilizes active vehicle battery capacities to absorb load variations during peak grid surges.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 4: Battery Management -->
+    <section class="section-padding" style="border-bottom: 1px solid var(--border-color);">
+        <div class="container">
+            <div class="grid-2">
+                <div class="visual-mock">
+                    <!-- Battery visualization widget -->
+                    <h4 style="color: var(--purple); margin-bottom: 20px;"><i class="fa-solid fa-battery-half"></i> Matrix State of Charge</h4>
+                    <div class="battery-visual-container">
+                        <div class="battery-pack battery-pack-90">
+                            <div class="battery-cell"></div>
+                            <div class="battery-cell"></div>
+                            <div class="battery-cell"></div>
+                            <div class="battery-cell"></div>
+                            <div class="battery-cell"></div>
+                        </div>
+                        <div class="battery-pack battery-pack-60">
+                            <div class="battery-cell"></div>
+                            <div class="battery-cell"></div>
+                            <div class="battery-cell"></div>
+                            <div class="battery-cell"></div>
+                            <div class="battery-cell"></div>
+                        </div>
+                        <div class="battery-pack battery-pack-30">
+                            <div class="battery-cell"></div>
+                            <div class="battery-cell"></div>
+                            <div class="battery-cell"></div>
+                            <div class="battery-cell"></div>
+                            <div class="battery-cell"></div>
+                        </div>
+                    </div>
+                    <div class="stat-rows" style="font-size: 0.85rem; margin-top: 15px;">
+                        <div class="stat-row"><span>Cell Health Matrix</span><span style="color: var(--lime);">98.4% (Optimal)</span></div>
+                        <div class="stat-row"><span>Liquid cooling pressure</span><span>2.8 Bar</span></div>
+                    </div>
+                </div>
+                <div>
+                    <span class="badge badge-purple">Diagnostics System</span>
+                    <h2 style="font-size: 2.3rem; margin-bottom: 20px;">Cognitive Battery Management</h2>
+                    <p style="color: var(--text-muted); margin-bottom: 20px;">
+                        Stackly Grid implements active thermal management and cell balancing diagnostics. Our system queries telematics from connected vehicles and stationary storage reserves to model health degradation.
+                    </p>
+                    <p style="color: var(--text-muted); margin-bottom: 30px;">
+                        By adjusting charge cycles based on internal temperatures, we extend overall battery lifetime by up to 28% compared to standard EV chargers.
+                    </p>
+                    <a href="404.html" class="btn btn-primary"><i class="fa-solid fa-user-shield"></i> Activate Battery Shield</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 5: Smart Grid Integration -->
+    <section class="section-padding bg-graphite-light" style="border-bottom: 1px solid var(--border-color);">
+        <div class="container">
+            <div class="section-header">
+                <span class="badge badge-cyan">Intelligent Mesh</span>
+                <h2>Cognitive Smart Grid Integration</h2>
+                <p>Exchanging load signals between core utilities, local chargers, and regional generators dynamically.</p>
+            </div>
+
+            <div class="grid-3">
+                <div class="card" style="text-align: center;">
+                    <div class="card-icon card-icon-cyan" style="margin: 0 auto 24px;"><i class="fa-solid fa-wave-square"></i></div>
+                    <h3>Frequency Stabilization</h3>
+                    <p>Balances local line frequency to offset sudden vehicle link and unlink events.</p>
+                </div>
+                <div class="card" style="text-align: center;">
+                    <div class="card-icon card-icon-lime" style="margin: 0 auto 24px;"><i class="fa-solid fa-handshake-simple"></i></div>
+                    <h3>Demand Side Response</h3>
+                    <p>Offsets charging loads during grid shortages, minimizing infrastructure strain.</p>
+                </div>
+                <div class="card" style="text-align: center;">
+                    <div class="card-icon card-icon-purple" style="margin: 0 auto 24px;"><i class="fa-solid fa-tags"></i></div>
+                    <h3>Dynamic Pricing</h3>
+                    <p>Varies pricing rates based on active grid capacities to incentivize night charging.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 6: Future Energy Solutions -->
+    <section class="cta-section">
+        <div class="container cta-content">
+            <span class="badge badge-purple">Horizon Tech</span>
+            <h2 style="margin-top: 10px;">Future Energy Solutions</h2>
+            <p>From megawatt heavy vehicle charger meshes to organic liquid hydrogen storage matrices, our labs are building tomorrow's energy channels.</p>
+            <div style="display: flex; gap: 16px; justify-content: center;">
+                <a href="404.html" class="btn btn-primary">Join Sandbox Hub</a>
+                <a href="404.html" class="btn btn-secondary">Request Consultation</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-top-grid">
+                <!-- Brand Column -->
+                <div class="footer-brand">
+                    <a href="index.html" class="logo">
+                        <img src="assets/logo.webp" alt="Stackly Grid Logo" style="height: 38px; width: auto; display: block;" />
+                    </a>
+                    <p>Decentralized energy networks regulating future electric vehicle systems to secure smart grid stability and carbon abatement.</p>
+                    <div class="social-links">
+                        <a href="404.html" class="social-link" aria-label="X (formerly Twitter)"><i class="fa-brands fa-x-twitter"></i></a>
+                        <a href="404.html" class="social-link" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                        <a href="404.html" class="social-link" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+                        <a href="404.html" class="social-link" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                    </div>
+                </div>
+                
+                <!-- Platform Links Column -->
+                <div>
+                    <h4 class="footer-title">Platform</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home System</a></li>
+                        <li><a href="network.html">Mobility Network</a></li>
+                        <li><a href="ecosystem.html">Energy Ecosystem</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="blog.html">Blog Insights</a></li>
+                       
+                    </ul>
+                </div>
+                
+                <!-- Control Hub Column -->
+                <div>
+                    <h4 class="footer-title">Control Hub</h4>
+                    <ul class="footer-links">
+                        <li><a href="login.html">Member Login</a></li>
+                        <li><a href="signup.html">Create Account</a></li>
+                        <li><a href="admin.html">Control Center</a></li>
+                        <li><a href="user.html">Personal Hub</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                       
+                    </ul>
+                </div>
+                
+                
+                <!-- Contact Column -->
+                <div>
+                    <h4 class="footer-title">Contact Info</h4>
+                    <ul class="footer-contact-list">
+                        <li>
+                            <i class="fa-solid fa-map-marker-alt"></i>
+                            <span>882 Tesla Parkway, Suite 400, Austin, TX 78725</span>
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-phone-alt"></i>
+                            <span><a href="tel:+18005550199">+1 (800) 555-0199</a></span>
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-envelope"></i>
+                            <span><a href="mailto:support@stacklygrid.com">support@stacklygrid.com</a></span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2026 Stackly. All energy systems secure.</p>
+                <div class="footer-bottom-links">
+                    <a href="404.html">Security Protocol</a>
+                    <a href="404.html">Privacy Standard</a>
+                    <a href="404.html">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll to Top Button -->
+    <button id="scrollTop" aria-label="Scroll to top"><i class="fa-solid fa-chevron-up"></i></button>
+
+    <!-- Scripts -->
+
+    <!-- Scripts -->
+    <script src="shared.js"></script>
+    </body>
+</html>

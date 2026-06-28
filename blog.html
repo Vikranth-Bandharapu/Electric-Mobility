@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Insights & Articles - Stackly Grid</title>
+    <meta name="description" content="Stay up to date with bidirectional charging networks, microgrid balancing, and telemetry software.">
+    <!-- Styles -->
+    <link rel="stylesheet" href="style.css">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+
+    <!-- Header Navigation -->
+    <header class="header">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <img src="assets/logo.webp" alt="Stackly Grid Logo" style="height: 38px; width: auto; display: block;" />
+            </a>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="network.html" class="nav-link">Mobility Network</a></li>
+                <li><a href="ecosystem.html" class="nav-link">Energy Ecosystem</a></li>
+                <li><a href="about.html" class="nav-link">About Us</a></li>
+                <li><a href="blog.html" class="nav-link active">Blog</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="nav-actions" id="header-auth-actions">
+                <a href="login.html" class="btn btn-secondary btn-sm">Login</a>
+                <a href="signup.html" class="btn btn-primary btn-sm">Sign Up</a>
+            </div>
+            <button class="hamburger" id="hamburger-btn" aria-label="Toggle Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Mobile Drawer -->
+    <div class="mobile-overlay" id="mobile-overlay"></div>
+    <div class="mobile-menu" id="mobile-menu">
+        <ul class="nav-menu">
+            <li><a href="index.html" class="nav-link">Home</a></li>
+            <li><a href="network.html" class="nav-link">Mobility Network</a></li>
+            <li><a href="ecosystem.html" class="nav-link">Energy Ecosystem</a></li>
+            <li><a href="about.html" class="nav-link">About Us</a></li>
+            <li><a href="blog.html" class="nav-link active">Blog</a></li>
+            <li><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+        <div class="nav-actions" id="mobile-auth-actions">
+            <a href="login.html" class="btn btn-secondary">Login</a>
+            <a href="signup.html" class="btn btn-primary">Sign Up</a>
+        </div>
+    </div>
+
+    <!-- SECTION 1: HERO SECTION -->
+    <section class="page-hero" style="padding: 120px 0 40px; text-align: center; border-bottom: 1px solid var(--border-color); background: radial-gradient(circle at 50% 50%, rgba(16, 185, 129, 0.05) 0%, transparent 60%);">
+        <div class="container">
+            <span class="badge badge-lime">Smart City Intelligence</span>
+            <h1 style="font-size: 3rem; margin-top: 10px; margin-bottom: 16px;">Stackly Insights Blog</h1>
+            <p style="max-width: 600px; margin: 0 auto; color: var(--text-muted);">Read the latest engineering logs, dispatch updates, and whitepapers on bidirectional V2G grids and vehicle load balancing.</p>
+        </div>
+    </section>
+
+    <!-- SECTION 2: BLOG CONTENT AREA -->
+    <section class="section-padding" style="padding-top: 50px;">
+        <div class="container">
+            <div class="blog-container-modern">
+                
+                <!-- Action Bar: Search & Category Filter Chips -->
+                <div class="blog-action-bar">
+                    <div class="blog-search-wrapper">
+                        <input type="text" id="blogSearchInput" class="search-input" placeholder="Search articles...">
+                        <i class="fa-solid fa-magnifying-glass search-icon"></i>
+                    </div>
+                    <div class="category-chips">
+                        <span class="chip active" data-filter="all">All Logs</span>
+                        <span class="chip" data-filter="grid">Grid Tech</span>
+                        <span class="chip" data-filter="v2g">V2G Systems</span>
+                        <span class="chip" data-filter="telemetry">Telemetry</span>
+                    </div>
+                </div>
+
+                <!-- Featured Post -->
+                <article class="blog-featured-post-modern blog-card" data-category="grid" data-title="the rise of autonomous charging corridors">
+                    <div class="featured-img" style="background-image: url('assets/OIP.webp');"></div>
+                    <div class="featured-details">
+                        <span class="badge badge-lime">Grid Infrastructure</span>
+                        <h2 style="font-size: 2.2rem; margin: 15px 0 10px; line-height: 1.2;">
+                            <a href="404.html" style="color: var(--text-primary);">The Rise of Autonomous Charging Corridors</a>
+                        </h2>
+                        <p style="color: var(--text-muted); font-size: 0.98rem; margin-bottom: 24px; line-height: 1.6;">
+                            Exploring the deployment of megawatt charging matrices designed to replenish heavy autonomous commercial vehicle fleets without triggering regional utility spikes.
+                        </p>
+                        <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid var(--border-color); padding-top: 20px; font-size: 0.85rem; color: var(--text-dark); width: 100%;">
+                            <span>June 24, 2026 &nbsp;·&nbsp; 6 min read</span>
+                            <a href="404.html" style="color: var(--cyan); font-weight: 600;">Read Telemetry &rarr;</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Normal Posts Grid -->
+                <div class="blog-grid-3" id="blogGridContainer">
+                    
+                    <!-- Card 1 -->
+                    <div class="card blog-card" data-category="v2g" data-title="understanding vehicle to grid v2g load balancers">
+                        <div class="blog-card-img" style="background-image: url('assets/smart-grid.webp'); height: 220px; background-size: cover; background-position: center; border-radius: 8px 8px 0 0;"></div>
+                        <div class="blog-card-body" style="padding: 24px; display: flex; flex-direction: column; justify-content: space-between; min-height: 240px;">
+                            <div>
+                                <span class="badge badge-cyan" style="font-size: 10px;">V2G Technology</span>
+                                <h3 style="font-size: 1.25rem; margin: 10px 0 8px;"><a href="404.html">Understanding V2G Load Balancers</a></h3>
+                                <p style="font-size: 0.9rem; color: var(--text-muted); line-height: 1.5; margin-bottom: 16px;">An operations manual explaining how vehicle battery reserves return active currents to substations during utility surges.</p>
+                            </div>
+                            <div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.8rem; border-top: 1px solid var(--border-color); padding-top: 16px; color: var(--text-dark);">
+                                <span>June 20, 2026 &nbsp;·&nbsp; 4 min read</span>
+                                <a href="404.html" style="color: var(--cyan); font-weight: 600;">Read &rarr;</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 2 -->
+                    <div class="card blog-card" data-category="telemetry" data-title="sensing the grid real time mesh networks">
+                        <div class="blog-card-img" style="background-image: url('assets/OIP\ \(1\).webp'); height: 220px; background-size: cover; background-position: center; border-radius: 8px 8px 0 0;"></div>
+                        <div class="blog-card-body" style="padding: 24px; display: flex; flex-direction: column; justify-content: space-between; min-height: 240px;">
+                            <div>
+                                <span class="badge badge-purple" style="font-size: 10px;">Grid Sensors</span>
+                                <h3 style="font-size: 1.25rem; margin: 10px 0 8px;"><a href="404.html">Sensing the Grid: Mesh Networks</a></h3>
+                                <p style="font-size: 0.9rem; color: var(--text-muted); line-height: 1.5; margin-bottom: 16px;">How telemetry diagnostics from connected EVs optimize micro-grid allocations dynamically.</p>
+                            </div>
+                            <div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.8rem; border-top: 1px solid var(--border-color); padding-top: 16px; color: var(--text-dark);">
+                                <span>June 15, 2026 &nbsp;·&nbsp; 5 min read</span>
+                                <a href="404.html" style="color: var(--cyan); font-weight: 600;">Read &rarr;</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 3 -->
+                    <div class="card blog-card" data-category="v2g" data-title="solid state sodium ion batteries research">
+                        <div class="blog-card-img" style="background-image: url('assets/research.webp'); height: 220px; background-size: cover; background-position: center; border-radius: 8px 8px 0 0;"></div>
+                        <div class="blog-card-body" style="padding: 24px; display: flex; flex-direction: column; justify-content: space-between; min-height: 240px;">
+                            <div>
+                                <span class="badge badge-cyan" style="font-size: 10px;">Battery Tech</span>
+                                <h3 style="font-size: 1.25rem; margin: 10px 0 8px;"><a href="404.html">Solid-State Sodium-Ion Research</a></h3>
+                                <p style="font-size: 0.9rem; color: var(--text-muted); line-height: 1.5; margin-bottom: 16px;">Assessing alternative chemical structures designed to maximize dynamic range cycles and reduce lithium reliance.</p>
+                            </div>
+                            <div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.8rem; border-top: 1px solid var(--border-color); padding-top: 16px; color: var(--text-dark);">
+                                <span>June 08, 2026 &nbsp;·&nbsp; 8 min read</span>
+                                <a href="404.html" style="color: var(--cyan); font-weight: 600;">Read &rarr;</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 4 -->
+                    <div class="card blog-card" data-category="grid" data-title="solar power integration buffers">
+                        <div class="blog-card-img" style="background-image: url('assets/solor.webp'); height: 220px; background-size: cover; background-position: center; border-radius: 8px 8px 0 0;"></div>
+                        <div class="blog-card-body" style="padding: 24px; display: flex; flex-direction: column; justify-content: space-between; min-height: 240px;">
+                            <div>
+                                <span class="badge badge-lime" style="font-size: 10px;">Renewables</span>
+                                <h3 style="font-size: 1.25rem; margin: 10px 0 8px;"><a href="404.html">Solar Integration Buffers</a></h3>
+                                <p style="font-size: 0.9rem; color: var(--text-muted); line-height: 1.5; margin-bottom: 16px;">How mega-scale stationary batteries absorb morning solar inflows to buffer heavy evening transit charges.</p>
+                            </div>
+                            <div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.8rem; border-top: 1px solid var(--border-color); padding-top: 16px; color: var(--text-dark);">
+                                <span>May 30, 2026 &nbsp;·&nbsp; 5 min read</span>
+                                <a href="404.html" style="color: var(--cyan); font-weight: 600;">Read &rarr;</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 5 -->
+                    <div class="card blog-card" data-category="telemetry" data-title="cognitive load distribution models">
+                        <div class="blog-card-img" style="background-image: url('assets/star.webp'); height: 220px; background-size: cover; background-position: center; border-radius: 8px 8px 0 0;"></div>
+                        <div class="blog-card-body" style="padding: 24px; display: flex; flex-direction: column; justify-content: space-between; min-height: 240px;">
+                            <div>
+                                <span class="badge badge-purple" style="font-size: 10px;">Predictive AI</span>
+                                <h3 style="font-size: 1.25rem; margin: 10px 0 8px;"><a href="404.html">Cognitive Load Distribution</a></h3>
+                                <p style="font-size: 0.9rem; color: var(--text-muted); line-height: 1.5; margin-bottom: 16px;">Deploying machine learning models at regional sub-stations to predict vehicle arrival spikes and buffer reserves.</p>
+                            </div>
+                            <div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.8rem; border-top: 1px solid var(--border-color); padding-top: 16px; color: var(--text-dark);">
+                                <span>May 20, 2026 &nbsp;·&nbsp; 7 min read</span>
+                                <a href="404.html" style="color: var(--cyan); font-weight: 600;">Read &rarr;</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Empty State (Hidden by default) -->
+                <div class="card" id="blogEmptyState" style="display: none; padding: 60px; text-align: center;">
+                    <i class="fa-solid fa-solar-panel" style="font-size: 48px; color: var(--lime); margin-bottom: 20px;"></i>
+                    <h3>No Articles Found</h3>
+                    <p style="color: var(--text-muted); margin-top: 10px; margin-bottom: 20px;">No telemetry insights fit your search terms or filter selections.</p>
+                    <button class="btn btn-primary" id="resetFilterBtn">Reset Filters</button>
+                </div>
+
+                <!-- Mid-page Telemetry Stats Banner -->
+                <div class="blog-telemetry-banner">
+                    <div>
+                        <span class="badge badge-cyan">LIVE GRID FEED</span>
+                        <h3 style="font-size: 1.6rem; margin-top: 10px; margin-bottom: 12px; color: var(--white);">Stackly Network Telemetry Status</h3>
+                        <p style="color: var(--text-muted); font-size: 0.92rem; line-height: 1.5;">Connected vehicles are currently balancing 42.8 MWh of active grid frequency loads across 12 smart city districts.</p>
+                    </div>
+                    <div class="blog-telemetry-metrics">
+                        <div class="blog-telemetry-metric">
+                            <span class="val">99.98%</span>
+                            <span class="lbl">Grid Uptime</span>
+                        </div>
+                        <div class="blog-telemetry-metric">
+                            <span class="val">42.8MWh</span>
+                            <span class="lbl">Load Balanced</span>
+                        </div>
+                        <div class="blog-telemetry-metric">
+                            <span class="val">0.02s</span>
+                            <span class="lbl">Sync Latency</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Newsletter Spanning Banner -->
+                <div class="blog-newsletter-banner">
+                    <span class="badge badge-purple" style="margin-bottom: 12px;">SUBSCRIBE TO DISPATCH</span>
+                    <h3>Stay Informed on Grid Tech</h3>
+                    <p>Receive weekly updates on solid-state battery research, microgrid algorithms, and dynamic off-peak scheduling straight from our engineering desk.</p>
+                    <form id="blogNlForm" class="blog-newsletter-form" novalidate>
+                        <input type="email" id="blogNlEmail" class="form-input" placeholder="Enter your email address...">
+                        <button type="submit" class="btn btn-primary" id="blogNlBtn"><i class="fa-solid fa-paper-plane"></i> Subscribe</button>
+                    </form>
+                    <div id="blogNlMsg" style="font-size: 12px; margin-top: 16px; min-height: 18px;"></div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-top-grid">
+                <!-- Brand Column -->
+                <div class="footer-brand">
+                    <a href="index.html" class="logo">
+                        <img src="assets/logo.webp" alt="Stackly Grid Logo" style="height: 38px; width: auto; display: block;" />
+                    </a>
+                    <p>Decentralized energy networks regulating future electric vehicle systems to secure smart grid stability and carbon abatement.</p>
+                    <div class="social-links">
+                        <a href="404.html" class="social-link" aria-label="X (formerly Twitter)"><i class="fa-brands fa-x-twitter"></i></a>
+                        <a href="404.html" class="social-link" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                        <a href="404.html" class="social-link" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+                        <a href="404.html" class="social-link" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                    </div>
+                </div>
+                
+                <!-- Platform Links Column -->
+               <div>
+                    <h4 class="footer-title">Platform</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home System</a></li>
+                        <li><a href="network.html">Mobility Network</a></li>
+                        <li><a href="ecosystem.html">Energy Ecosystem</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="blog.html">Blog Insights</a></li>
+                       
+                    </ul>
+                </div>
+                
+                <!-- Control Hub Column -->
+                <div>
+                    <h4 class="footer-title">Control Hub</h4>
+                    <ul class="footer-links">
+                        <li><a href="login.html">Member Login</a></li>
+                        <li><a href="signup.html">Create Account</a></li>
+                        <li><a href="admin.html">Control Center</a></li>
+                        <li><a href="user.html">Personal Hub</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                       
+                    </ul>
+                </div>
+                
+                <!-- Contact Column -->
+                <div>
+                    <h4 class="footer-title">Contact Info</h4>
+                    <ul class="footer-contact-list">
+                        <li>
+                            <i class="fa-solid fa-map-marker-alt"></i>
+                            <span>882 Tesla Parkway, Suite 400, Austin, TX 78725</span>
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-phone-alt"></i>
+                            <span><a href="tel:+18005550199">+1 (800) 555-0199</a></span>
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-envelope"></i>
+                            <span><a href="mailto:support@stacklygrid.com">support@stacklygrid.com</a></span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2026 Stackly. All energy systems secure.</p>
+                <div class="footer-bottom-links">
+                    <a href="404.html">Security Protocol</a>
+                    <a href="404.html">Privacy Standard</a>
+                    <a href="404.html">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll to Top Button -->
+    <button id="scrollTop" aria-label="Scroll to top"><i class="fa-solid fa-chevron-up"></i></button>
+
+    <!-- Scripts -->
+    <script src="shared.js"></script>
+    <script>
+        // Dynamic Filtering and Search logic
+        const searchInput = document.getElementById('blogSearchInput');
+        const chipItems = document.querySelectorAll('.chip');
+        const blogCards = document.querySelectorAll('.blog-card');
+        const emptyState = document.getElementById('blogEmptyState');
+        const gridContainer = document.getElementById('blogGridContainer');
+
+        let activeFilter = 'all';
+        let searchQuery = '';
+
+        function filterArticles() {
+            let matchesCount = 0;
+
+            blogCards.forEach(card => {
+                const category = card.getAttribute('data-category');
+                const title = card.getAttribute('data-title') || '';
+                
+                const matchesCategory = (activeFilter === 'all' || category === activeFilter);
+                const matchesSearch = (title.includes(searchQuery.toLowerCase()));
+
+                if (matchesCategory && matchesSearch) {
+                    card.classList.remove('fade-out');
+                    card.classList.add('fade-in');
+                    matchesCount++;
+                } else {
+                    card.classList.remove('fade-in');
+                    card.classList.add('fade-out');
+                }
+            });
+
+            // Show empty state if no matches
+            if (matchesCount === 0) {
+                emptyState.style.display = 'block';
+                gridContainer.style.display = 'none';
+            } else {
+                emptyState.style.display = 'none';
+                gridContainer.style.display = 'grid';
+            }
+        }
+
+        // Search trigger
+        if (searchInput) {
+            searchInput.addEventListener('input', (e) => {
+                searchQuery = e.target.value.trim();
+                filterArticles();
+            });
+        }
+
+        // Chip trigger
+        chipItems.forEach(item => {
+            item.addEventListener('click', (e) => {
+                chipItems.forEach(i => i.classList.remove('active'));
+                item.classList.add('active');
+                
+                activeFilter = item.getAttribute('data-filter');
+                filterArticles();
+            });
+        });
+
+        // Reset button
+        const resetBtn = document.getElementById('resetFilterBtn');
+        if (resetBtn) {
+            resetBtn.addEventListener('click', () => {
+                if (searchInput) searchInput.value = '';
+                searchQuery = '';
+                
+                chipItems.forEach(i => i.classList.remove('active'));
+                const allItem = document.querySelector('.chip[data-filter="all"]');
+                if (allItem) allItem.classList.add('active');
+                
+                activeFilter = 'all';
+                filterArticles();
+            });
+        }
+
+        // Newsletter validation
+        document.getElementById('blogNlForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const emailInput = document.getElementById('blogNlEmail');
+            const msgEl = document.getElementById('blogNlMsg');
+            
+            const email = emailInput.value.trim();
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            
+            if (!email || !emailRegex.test(email)) {
+                emailInput.style.borderColor = '#ef4444';
+                msgEl.style.color = '#ef4444';
+                msgEl.textContent = 'Please enter a valid email address.';
+                return;
+            }
+            
+            // Save to localStorage
+            const subscribers = JSON.parse(localStorage.getItem('newsletter_subscribers')) || [];
+            if (subscribers.includes(email)) {
+                msgEl.style.color = 'var(--cyan)';
+                msgEl.textContent = 'This email is already subscribed!';
+                return;
+            }
+            
+            subscribers.push(email);
+            localStorage.setItem('newsletter_subscribers', JSON.stringify(subscribers));
+            
+            emailInput.value = '';
+            emailInput.style.borderColor = 'var(--border-color)';
+            msgEl.style.color = 'var(--lime)';
+            msgEl.textContent = 'Subscription successful! Thank you.';
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Stackly Grid</title>
+    <meta name="description" content="Access the Energy Control Center or Personal Energy Hub.">
+    <!-- Styles -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body class="auth-body">
+
+    <!-- Header Navigation -->
+    <header class="header">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <img src="assets/logo.webp" alt="Stackly Grid Logo" style="height: 38px; width: auto; display: block;" />
+            </a>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="network.html" class="nav-link">Mobility Network</a></li>
+                <li><a href="ecosystem.html" class="nav-link">Energy Ecosystem</a></li>
+                <li><a href="about.html" class="nav-link">About Us</a></li>
+                <li><a href="blog.html" class="nav-link">Blog</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="nav-actions">
+                <a href="login.html" class="btn btn-secondary btn-sm">Login</a>
+                <a href="signup.html" class="btn btn-primary btn-sm">Sign Up</a>
+            </div>
+            <button class="hamburger" id="hamburger-btn" aria-label="Toggle Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Mobile Drawer -->
+    <div class="mobile-overlay" id="mobile-overlay"></div>
+    <div class="mobile-menu" id="mobile-menu">
+        <ul class="nav-menu">
+            <li><a href="index.html" class="nav-link">Home</a></li>
+            <li><a href="network.html" class="nav-link">Mobility Network</a></li>
+            <li><a href="ecosystem.html" class="nav-link">Energy Ecosystem</a></li>
+            <li><a href="about.html" class="nav-link">About Us</a></li>
+            <li><a href="blog.html" class="nav-link">Blog</a></li>
+            <li><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+        <div class="nav-actions">
+            <a href="login.html" class="btn btn-secondary">Login</a>
+            <a href="signup.html" class="btn btn-primary">Sign Up</a>
+        </div>
+    </div>
+
+    <!-- Main Wrapper -->
+    <main class="auth-wrap">
+        <!-- Auth Card -->
+        <div class="auth-card-premium" style="margin-top: 100px;">
+            
+            <!-- Success Banner (shown if coming from signup) -->
+            <div id="signup-success-banner" style="display:none; align-items:center; gap:12px; background:rgba(16,185,129,0.12); border:1px solid rgba(16,185,129,0.3); border-radius:12px; padding:12px; margin-bottom:20px; text-align:left;">
+                <i class="fa-solid fa-circle-check" style="color:var(--cyan); font-size:1.2rem;"></i>
+                <div>
+                    <div style="color:var(--white); font-weight:600; font-size:0.9rem;">Account created successfully!</div>
+                    <div style="color:var(--text-muted); font-size:0.8rem;">Please log in to continue to your dashboard.</div>
+                </div>
+            </div>
+
+            <!-- Profile icon inside the card -->
+            <div class="auth-user-icon">
+                <i class="fa-regular fa-user"></i>
+            </div>
+
+            <h2>Access Grid Portal</h2>
+
+            <!-- Role Tabs -->
+            <div class="auth-role-tabs">
+                <button type="button" class="role-tab active" id="tab-user" onclick="setRole('user')">
+                    <i class="fa-solid fa-user"></i> User Portal
+                </button>
+                <button type="button" class="role-tab" id="tab-admin" onclick="setRole('admin')">
+                    <i class="fa-solid fa-screwdriver-wrench"></i> Grid Admin
+                </button>
+            </div>
+
+            <div class="auth-error-msg" id="general-login-error" style="display: none; margin-bottom: 15px; text-align: center;">
+                Invalid email or password.
+            </div>
+
+            <form id="login-form" novalidate>
+                <!-- Hidden Role Input -->
+                <input type="hidden" id="role" value="user">
+
+                <!-- Email Input Group -->
+                <div class="auth-input-group" id="email-group">
+                    <i class="fa fa-envelope"></i>
+                    <input type="email" id="email" placeholder="Email Address" required>
+                </div>
+                <div class="auth-error-msg" id="email-error">Please enter your email.</div>
+
+                <!-- Password Input Group -->
+                <div class="auth-input-group" id="pass-group">
+                    <i class="fa fa-lock"></i>
+                    <input type="password" id="password" placeholder="Password" required>
+                    <i class="fa-regular fa-eye-slash toggle-password" id="togglePassword"></i>
+                </div>
+                <div class="auth-error-msg" id="password-error">Please enter your password.</div>
+
+                <!-- Options -->
+                <div class="auth-options">
+                    <label>
+                        <input type="checkbox" id="remember"> Remember me
+                    </label>
+                    <a href="404.html">Forgot Password?</a>
+                </div>
+
+                <button type="submit" class="auth-submit-btn">
+                    <i class="fa-solid fa-right-to-bracket"></i> Login to Dashboard
+                </button>
+            </form>
+
+            <div class="auth-link">
+                Don't have an account? <a href="signup.html">Create one here</a>
+            </div>
+        </div>
+    </main>
+
+    <!-- Scripts -->
+    <script src="shared.js"></script>
+    <script>
+        // Track the selected role
+        function setRole(roleName) {
+            document.getElementById('role').value = roleName;
+            
+            const userTab = document.getElementById('tab-user');
+            const adminTab = document.getElementById('tab-admin');
+            
+            if (roleName === 'user') {
+                userTab.classList.add('active');
+                adminTab.classList.remove('active');
+            } else {
+                adminTab.classList.add('active');
+                userTab.classList.remove('active');
+            }
+        }
+
+        // Show success message on login if coming from signup
+        window.addEventListener('DOMContentLoaded', () => {
+            const urlParams = new URLSearchParams(window.location.search);
+            if (urlParams.get('registered') === 'true') {
+                const successBanner = document.getElementById('signup-success-banner');
+                if (successBanner) successBanner.style.display = 'flex';
+                
+                const regEmail = localStorage.getItem('em_reg_email');
+                const emailInput = document.getElementById('email');
+                if (regEmail && emailInput) {
+                    emailInput.value = regEmail;
+                }
+            }
+        });
+
+        document.getElementById('login-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            // Reset error states
+            document.getElementById('general-login-error').style.display = 'none';
+            document.getElementById('email-error').style.display = 'none';
+            document.getElementById('password-error').style.display = 'none';
+            
+            const emailField = document.getElementById('email');
+            const passwordField = document.getElementById('password');
+            const emailGroup = document.getElementById('email-group');
+            const passGroup = document.getElementById('pass-group');
+
+            emailGroup.classList.remove('invalid');
+            passGroup.classList.remove('invalid');
+
+            const email = emailField.value.trim();
+            const password = passwordField.value;
+            const role = document.getElementById('role').value;
+
+            let isValid = true;
+
+            // Email validation
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!email) {
+                document.getElementById('email-error').textContent = 'Please enter your email.';
+                document.getElementById('email-error').style.display = 'block';
+                emailGroup.classList.add('invalid');
+                isValid = false;
+            } else if (!emailRegex.test(email)) {
+                document.getElementById('email-error').textContent = 'Please enter a valid email address.';
+                document.getElementById('email-error').style.display = 'block';
+                emailGroup.classList.add('invalid');
+                isValid = false;
+            }
+
+            // Password validation
+            if (!password) {
+                document.getElementById('password-error').textContent = 'Please enter your password.';
+                document.getElementById('password-error').style.display = 'block';
+                passGroup.classList.add('invalid');
+                isValid = false;
+            } else if (password.length < 6) {
+                document.getElementById('password-error').textContent = 'Password must be at least 6 characters.';
+                document.getElementById('password-error').style.display = 'block';
+                passGroup.classList.add('invalid');
+                isValid = false;
+            }
+
+            if (!isValid) return;
+
+            // Generate active session data on the fly (same functionality as waste management / adventure sports)
+            const nameFromEmail = email.split('@')[0];
+            const capitalizedName = nameFromEmail.charAt(0).toUpperCase() + nameFromEmail.slice(1);
+            
+            const currentUser = {
+                name: role === 'admin' ? 'Grid Admin' : capitalizedName,
+                email: email,
+                role: role,
+                joined: new Date().toISOString().split('T')[0]
+            };
+            
+            // Save session
+            sessionStorage.setItem('currentUser', JSON.stringify(currentUser));
+            
+            // Redirect based on role
+            if (role === 'admin') {
+                window.location.href = 'admin.html';
+            } else {
+                window.location.href = 'user.html';
+            }
+        });
+
+        // Toggle password visibility
+        const togglePassword = document.getElementById("togglePassword");
+        const passwordInput = document.getElementById("password");
+        if (togglePassword && passwordInput) {
+            togglePassword.addEventListener("click", function () {
+                const type = passwordInput.getAttribute("type") === "password" ? "text" : "password";
+                passwordInput.setAttribute("type", type);
+                this.classList.toggle("fa-eye");
+                this.classList.toggle("fa-eye-slash");
+            });
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Connection Lost - Stackly Grid</title>
+    <meta name="description" content="Unable to route power to the requested destination. Error 404.">
+    <!-- Styles -->
+    <link rel="stylesheet" href="style.css">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        .spark {
+            animation: spark-flash 1.5s infinite alternate ease-in-out;
+            transform-origin: center;
+        }
+        @keyframes spark-flash {
+            0%, 100% { opacity: 0.2; filter: drop-shadow(0 0 2px var(--purple)); }
+            50% { opacity: 1; filter: drop-shadow(0 0 10px var(--cyan)); }
+        }
+        .broken-path {
+            stroke-dasharray: 10 15;
+            animation: broken-flow 4s linear infinite;
+        }
+        @keyframes broken-flow {
+            to {
+                stroke-dashoffset: -100;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Scroll Progress -->
+    <div id="scrollProgress"></div>
+
+
+
+    <!-- MAIN ERROR SECTION -->
+    <main class="error-page-wrapper" style="padding-top: calc(var(--header-height) + 60px); padding-bottom: 80px; position: relative;">
+        <!-- Glowing Background Effect -->
+        <div style="position: absolute; width: 100%; height: 100%; top:0; left:0; z-index:-1; pointer-events:none;">
+            <svg width="100%" height="100%">
+                <circle cx="50%" cy="50%" r="200" fill="url(#purpleGlow)" opacity="0.15"></circle>
+                <defs>
+                    <radialGradient id="purpleGlow" cx="50%" cy="50%" r="50%">
+                        <stop offset="0%" stop-color="var(--purple)"></stop>
+                        <stop offset="100%" stop-color="transparent"></stop>
+                    </radialGradient>
+                </defs>
+            </svg>
+        </div>
+
+        <!-- Broken Energy Line SVG -->
+        <svg class="error-visual" viewBox="0 0 400 150" xmlns="http://www.w3.org/2000/svg">
+            <!-- Node Left -->
+            <circle cx="50" cy="75" r="12" fill="var(--cyan)" opacity="0.8" filter="drop-shadow(0 0 6px var(--cyan))"></circle>
+            <circle cx="50" cy="75" r="4" fill="var(--white)"></circle>
+            
+            <!-- Path Left -->
+            <path d="M 62 75 Q 120 40 160 75" fill="none" stroke="var(--cyan)" stroke-width="4" class="broken-path"></path>
+
+            <!-- Broken Spark Area -->
+            <g class="spark">
+                <!-- Sparks lines -->
+                <line x1="170" y1="70" x2="160" y2="55" stroke="var(--lime)" stroke-width="2"></line>
+                <line x1="180" y1="85" x2="190" y2="100" stroke="var(--lime)" stroke-width="2"></line>
+                <line x1="220" y1="70" x2="230" y2="55" stroke="var(--lime)" stroke-width="2"></line>
+                <line x1="210" y1="85" x2="200" y2="100" stroke="var(--lime)" stroke-width="2"></line>
+                
+                <circle cx="170" cy="75" r="3" fill="var(--lime)"></circle>
+                <circle cx="230" cy="75" r="3" fill="var(--lime)"></circle>
+            </g>
+            
+            <!-- Path Right -->
+            <path d="M 240 75 Q 280 110 338 75" fill="none" stroke="var(--purple)" stroke-width="4" stroke-dasharray="8 6" opacity="0.6"></path>
+
+            <!-- Node Right -->
+            <circle cx="350" cy="75" r="12" fill="var(--purple)" opacity="0.5" filter="drop-shadow(0 0 6px var(--purple))"></circle>
+            <circle cx="350" cy="75" r="4" fill="var(--white)" opacity="0.5"></circle>
+        </svg>
+
+        <div class="error-title">404</div>
+        <h2 class="error-subtitle">Connection Lost</h2>
+        <p class="error-desc">Unable To Reach Destination. The node you are requesting is offline or has been rerouted to protect smart grid stability.</p>
+        
+        <a href="index.html" class="btn btn-primary">
+            <i class="fa-solid fa-house-signal"></i> Back to Home
+        </a>
+    </main>
+
+    <!-- Scripts -->
+    <script src="shared.js"></script>
+    </body>
+</html>

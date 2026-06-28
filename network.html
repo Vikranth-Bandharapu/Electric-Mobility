@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mobility Network - Stackly Grid</title>
+    <meta name="description" content="Explore Stackly Grid's spatial coverage, node architectures, and charging systems.">
+    <!-- Styles -->
+    <link rel="stylesheet" href="style.css">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+
+    <!-- Scroll Progress -->
+    <div id="scrollProgress"></div>
+
+
+
+    <!-- Header Navigation -->
+    <header class="header">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <img src="assets/logo.webp" alt="Stackly Grid Logo" style="height: 38px; width: auto; display: block;" />
+            </a>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="network.html" class="nav-link active">Mobility Network</a></li>
+                <li><a href="ecosystem.html" class="nav-link">Energy Ecosystem</a></li>
+                <li><a href="about.html" class="nav-link">About Us</a></li>
+                <li><a href="blog.html" class="nav-link">Blog</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="nav-actions" id="header-auth-actions">
+                <a href="login.html" class="btn btn-secondary btn-sm">Login</a>
+                <a href="signup.html" class="btn btn-primary btn-sm">Sign Up</a>
+            </div>
+            <button class="hamburger" id="hamburger-btn" aria-label="Toggle Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Mobile Drawer -->
+    <div class="mobile-overlay" id="mobile-overlay"></div>
+    <div class="mobile-menu" id="mobile-menu">
+        <ul class="nav-menu">
+            <li><a href="index.html" class="nav-link">Home</a></li>
+            <li><a href="network.html" class="nav-link active">Mobility Network</a></li>
+            <li><a href="ecosystem.html" class="nav-link">Energy Ecosystem</a></li>
+            <li><a href="about.html" class="nav-link">About Us</a></li>
+            <li><a href="blog.html" class="nav-link">Blog</a></li>
+            <li><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+        <div class="nav-actions" id="mobile-auth-actions">
+            <a href="login.html" class="btn btn-secondary">Login</a>
+            <a href="signup.html" class="btn btn-primary">Sign Up</a>
+        </div>
+    </div>
+
+    <!-- SECTION 1: Smart Network Hero -->
+    <section class="page-hero">
+        <div class="container">
+            <span class="badge badge-cyan">Intelligent Mesh Routing</span>
+            <h1>The Connected Mobility Network</h1>
+            <p>Mapping the neural grid of electric transportation. Securely routing energy between mobile loads and local generators.</p>
+        </div>
+    </section>
+
+    <!-- SECTION 2: Connected Charging System -->
+    <section class="section-padding" style="border-bottom: 1px solid var(--border-color);">
+        <div class="container">
+            <div class="grid-2">
+                <div>
+                    <span class="badge badge-purple">Hardware Ecosystem</span>
+                    <h2 style="font-size: 2.3rem; margin-bottom: 20px;">Connected Charging Systems</h2>
+                    <p style="color: var(--text-muted); margin-bottom: 20px;">
+                        Our charging terminals are not dumb outlets. They are cloud-integrated processing nodes capable of CCS, NACS, and megawatt V2G charging, utilizing liquid-cooled lines and edge safety monitors.
+                    </p>
+                    <p style="color: var(--text-muted); margin-bottom: 30px;">
+                        By integrating telemetry directly into vehicles, we can diagnose battery cell structures and limit charging degradation dynamically.
+                    </p>
+                    <a href="404.html" class="btn btn-primary"><i class="fa-solid fa-square-plus"></i> Connect Your Vehicle</a>
+                </div>
+                <div class="visual-mock">
+                    <!-- Charger graphics mockup -->
+                    <div style="background: rgba(255,255,255,0.02); border: 1px solid var(--border-color); border-radius: 8px; padding: 24px;">
+                        <h4 style="color: var(--cyan); margin-bottom: 16px;"><i class="fa-solid fa-microchip"></i> Node Controller status</h4>
+                        <div class="stat-rows" style="font-size: 0.9rem;">
+                            <div class="stat-row"><span>Hardware Spec</span><span>Stackly Core v2.4</span></div>
+                            <div class="stat-row"><span>Line cooling temp</span><span style="color: var(--lime);">18.2 °C (Liquid)</span></div>
+                            <div class="stat-row"><span>Grid isolation</span><span style="color: var(--lime);">Secure (99.98%)</span></div>
+                            <div class="stat-row"><span>Max throughput</span><span>1,200 kW</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 3: Network Architecture -->
+    <section class="section-padding bg-graphite-light" style="border-bottom: 1px solid var(--border-color);">
+        <div class="container">
+            <div class="section-header">
+                <span class="badge badge-cyan">System Topology</span>
+                <h2>Grid Network Architecture</h2>
+                <p>Four structural layers ensuring zero-latency communication and safety across the grid ecosystem.</p>
+            </div>
+
+            <div class="grid-4">
+                <div class="card">
+                    <span class="badge badge-cyan" style="font-size: 0.65rem;">L1: Edge Load</span>
+                    <h3 style="margin-top: 10px;">Smart EV Client</h3>
+                    <p>Vehicles exchanging state-of-health and state-of-charge parameters with local node controllers.</p>
+                </div>
+                <div class="card">
+                    <span class="badge badge-purple" style="font-size: 0.65rem;">L2: Routing Node</span>
+                    <h3 style="margin-top: 10px;">Charger Controller</h3>
+                    <p>Edge hardware controlling active electricity flows, enforcing dynamic off-peak scheduling.</p>
+                </div>
+                <div class="card">
+                    <span class="badge badge-lime" style="font-size: 0.65rem;">L3: Substation Hub</span>
+                    <h3 style="margin-top: 10px;">Micro-Grid Router</h3>
+                    <p>Aggregates energy from solar farms and battery packages, distributing load margins locally.</p>
+                </div>
+                <div class="card">
+                    <span class="badge badge-cyan" style="font-size: 0.65rem;">L4: Core Cloud</span>
+                    <h3 style="margin-top: 10px;">Cognitive Core</h3>
+                    <p>Central machine learning system forecasting regional weather and managing power reserves.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 4: Coverage Analytics -->
+    <section class="section-padding" style="border-bottom: 1px solid var(--border-color);">
+        <div class="container">
+            <div class="grid-2">
+                <div class="visual-mock">
+                    <!-- Stylized SVG dynamic simulation representing map cells -->
+                    <svg viewBox="0 0 400 250" style="width:100%; height:auto;">
+                        <!-- Sector hexagons -->
+                        <polygon points="100,60 140,80 140,120 100,140 60,120 60,80" fill="none" stroke="var(--cyan)" stroke-width="2" opacity="0.3"></polygon>
+                        <polygon points="200,60 240,80 240,120 200,140 160,120 160,80" fill="none" stroke="var(--lime)" stroke-width="2" opacity="0.6"></polygon>
+                        <polygon points="150,140 190,160 190,200 150,220 110,200 110,160" fill="none" stroke="var(--purple)" stroke-width="2" opacity="0.4"></polygon>
+                        
+                        <!-- Dynamic active node indicators -->
+                        <circle cx="100" cy="100" r="6" fill="var(--cyan)"><animate attributeName="r" values="4;8;4" dur="2s" repeatCount="indefinite"></animate></circle>
+                        <circle cx="200" cy="100" r="6" fill="var(--lime)"><animate attributeName="r" values="4;8;4" dur="3s" repeatCount="indefinite"></animate></circle>
+                        <circle cx="150" cy="180" r="6" fill="var(--purple)"><animate attributeName="r" values="4;8;4" dur="2.5s" repeatCount="indefinite"></animate></circle>
+                        
+                        <text x="100" y="80" fill="var(--text-muted)" font-size="10" text-anchor="middle">Sector A (40%)</text>
+                        <text x="200" y="80" fill="var(--text-muted)" font-size="10" text-anchor="middle">Sector B (75%)</text>
+                        <text x="150" y="160" fill="var(--text-muted)" font-size="10" text-anchor="middle">Sector C (22%)</text>
+                    </svg>
+                </div>
+                <div>
+                    <span class="badge badge-lime">Spatial Telemetry</span>
+                    <h2 style="font-size: 2.3rem; margin-bottom: 20px;">Grid Coverage Analytics</h2>
+                    <p style="color: var(--text-muted); margin-bottom: 20px;">
+                        We analyze vehicle spatial distribution in real time to deploy dynamic grid balancing where it is needed most. This prevents localized transformer stress in heavily loaded sectors.
+                    </p>
+                    <p style="color: var(--text-muted); margin-bottom: 30px;">
+                        Our analytics map coverage densities and feed data back to microgrids, routing power seamlessly towards charging clusters.
+                    </p>
+                    <a href="404.html" class="btn btn-secondary"><i class="fa-solid fa-satellite-dish"></i> View Live Coverage map</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 5: Performance Dashboard -->
+    <section class="section-padding bg-graphite-light" style="border-bottom: 1px solid var(--border-color);">
+        <div class="container">
+            <div class="section-header">
+                <span class="badge badge-purple">Grid Health</span>
+                <h2>Active Performance Telemetry</h2>
+                <p>Simulated active connection parameters showing real-time network stability metrics.</p>
+            </div>
+
+            <div class="grid-3">
+                <div class="card" style="text-align: center;">
+                    <div style="font-family: var(--font-mono); font-size: 3rem; color: var(--cyan); margin-bottom: 12px;">4 ms</div>
+                    <h3>Network Latency</h3>
+                    <p>Average telemetry feedback delay between edge stations and central grids.</p>
+                </div>
+                <div class="card" style="text-align: center;">
+                    <div style="font-family: var(--font-mono); font-size: 3rem; color: var(--lime); margin-bottom: 12px;">99.99%</div>
+                    <h3>Grid Uptime</h3>
+                    <p>Continuous operational status maintained across active substations.</p>
+                </div>
+                <div class="card" style="text-align: center;">
+                    <div style="font-family: var(--font-mono); font-size: 3rem; color: var(--purple); margin-bottom: 12px;">150 kW</div>
+                    <h3>Mean Charge Rate</h3>
+                    <p>Average dynamic electricity delivery speed recorded across vehicles.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 6: CTA -->
+    <section class="cta-section">
+        <div class="container cta-content">
+            <h2>Ready to balance your load?</h2>
+            <p>Connect your commercial fleet or personal EV to the Stackly Grid today and optimize your charging footprints.</p>
+            <div style="display: flex; gap: 16px; justify-content: center;">
+                <a href="404.html" class="btn btn-primary"><i class="fa-solid fa-network-wired"></i> Integrate Now</a>
+                <a href="404.html" class="btn btn-secondary">Contact Support</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-top-grid">
+                <!-- Brand Column -->
+                <div class="footer-brand">
+                    <a href="index.html" class="logo">
+                        <img src="assets/logo.webp" alt="Stackly Grid Logo" style="height: 38px; width: auto; display: block;" />
+                    </a>
+                    <p>Decentralized energy networks regulating future electric vehicle systems to secure smart grid stability and carbon abatement.</p>
+                    <div class="social-links">
+                        <a href="404.html" class="social-link" aria-label="X (formerly Twitter)"><i class="fa-brands fa-x-twitter"></i></a>
+                        <a href="404.html" class="social-link" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                        <a href="404.html" class="social-link" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+                        <a href="404.html" class="social-link" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                    </div>
+                </div>
+                
+                <!-- Platform Links Column -->
+               <div>
+                    <h4 class="footer-title">Platform</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home System</a></li>
+                        <li><a href="network.html">Mobility Network</a></li>
+                        <li><a href="ecosystem.html">Energy Ecosystem</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="blog.html">Blog Insights</a></li>
+                       
+                    </ul>
+                </div>
+                
+                <!-- Control Hub Column -->
+                <div>
+                    <h4 class="footer-title">Control Hub</h4>
+                    <ul class="footer-links">
+                        <li><a href="login.html">Member Login</a></li>
+                        <li><a href="signup.html">Create Account</a></li>
+                        <li><a href="admin.html">Control Center</a></li>
+                        <li><a href="user.html">Personal Hub</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                       
+                    </ul>
+                </div>
+                
+                
+                <!-- Contact Column -->
+                <div>
+                    <h4 class="footer-title">Contact Info</h4>
+                    <ul class="footer-contact-list">
+                        <li>
+                            <i class="fa-solid fa-map-marker-alt"></i>
+                            <span>882 Tesla Parkway, Suite 400, Austin, TX 78725</span>
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-phone-alt"></i>
+                            <span><a href="tel:+18005550199">+1 (800) 555-0199</a></span>
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-envelope"></i>
+                            <span><a href="mailto:support@stacklygrid.com">support@stacklygrid.com</a></span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2026 Stackly. All energy systems secure.</p>
+                <div class="footer-bottom-links">
+                    <a href="404.html">Security Protocol</a>
+                    <a href="404.html">Privacy Standard</a>
+                    <a href="404.html">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll to Top Button -->
+    <button id="scrollTop" aria-label="Scroll to top"><i class="fa-solid fa-chevron-up"></i></button>
+
+    <!-- Scripts -->
+
+    <!-- Scripts -->
+    <script src="shared.js"></script>
+    </body>
+</html>
