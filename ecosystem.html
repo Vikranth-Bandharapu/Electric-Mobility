@@ -6,9 +6,26 @@
     <title>Energy Ecosystem - Stackly Grid</title>
     <meta name="description" content="Discover Stackly Grid's integration of solar, wind, battery matrices, and V2G energy systems.">
     <!-- Styles -->
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css?v=1.1">
     <!-- FontAwesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- AOS Scroll Animations -->
+    
+
+    <!-- AOS Loading Fallback Protection -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            setTimeout(function() {
+                if (typeof AOS === 'undefined' || !document.documentElement.classList.contains('aos-init')) {
+                    var style = document.createElement('style');
+                    style.id = 'aos-fallback';
+                    style.textContent = '[data-aos] { opacity: 1 !important; transform: none !important; transition: none !important; }';
+                    document.head.appendChild(style);
+                    console.log('AOS fallback activated');
+                }
+            }, 1200);
+        });
+    </script>
 </head>
 <body>
 
@@ -70,7 +87,7 @@
     </section>
 
     <!-- SECTION 2: Renewable Sources -->
-    <section class="section-padding" style="border-bottom: 1px solid var(--border-color);">
+    <section class="section-padding" style="border-bottom: 1px solid var(--border-color);" data-aos="fade-up">
         <div class="container">
             <div class="grid-2">
                 <div>
@@ -101,7 +118,7 @@
     </section>
 
     <!-- SECTION 3: Energy Distribution -->
-    <section class="section-padding bg-graphite-light" style="border-bottom: 1px solid var(--border-color);">
+    <section class="section-padding bg-graphite-light" style="border-bottom: 1px solid var(--border-color);" data-aos="fade-up">
         <div class="container">
             <div class="section-header">
                 <span class="badge badge-purple">Dynamic Routing</span>
@@ -130,7 +147,7 @@
     </section>
 
     <!-- SECTION 4: Battery Management -->
-    <section class="section-padding" style="border-bottom: 1px solid var(--border-color);">
+    <section class="section-padding" style="border-bottom: 1px solid var(--border-color);" data-aos="fade-up">
         <div class="container">
             <div class="grid-2">
                 <div class="visual-mock">
@@ -180,7 +197,7 @@
     </section>
 
     <!-- SECTION 5: Smart Grid Integration -->
-    <section class="section-padding bg-graphite-light" style="border-bottom: 1px solid var(--border-color);">
+    <section class="section-padding bg-graphite-light" style="border-bottom: 1px solid var(--border-color);" data-aos="fade-up">
         <div class="container">
             <div class="section-header">
                 <span class="badge badge-cyan">Intelligent Mesh</span>
@@ -209,7 +226,7 @@
     </section>
 
     <!-- SECTION 6: Future Energy Solutions -->
-    <section class="cta-section">
+    <section class="cta-section" data-aos="fade-up">
         <div class="container cta-content">
             <span class="badge badge-purple">Horizon Tech</span>
             <h2 style="margin-top: 10px;">Future Energy Solutions</h2>
@@ -222,7 +239,126 @@
     </section>
 
     <!-- FOOTER -->
-    <footer class="footer">
+    
+    <!-- Section 1: Fleet Electrification Playbook -->
+    <section class="fleet-playbook" style="padding: 100px 0; background: var(--bg-graphite-light); border-top: 1px solid var(--border-color);" data-aos="fade-up">
+        <div class="container">
+            <div class="text-center" style="margin-bottom: 60px;">
+                <span class="tech-badge" style="background: rgba(0, 255, 204, 0.08); color: var(--cyan); border: 1px solid rgba(0, 255, 204, 0.15);">TRANSITION STRATEGY</span>
+                <h2 style="font-size: 2.5rem; margin-top: 15px;">Fleet Electrification Playbook</h2>
+                <p style="color: var(--text-muted); max-width: 600px; margin: 16px auto 0;">A standardized roadmap for logistics networks converting to clean load-balanced electric fleets.</p>
+            </div>
+            <div class="grid-4">
+                <div class="card" style="padding: 30px; transition: var(--transition-normal);" data-aos="fade-up" data-aos-delay="100">
+                    <div style="font-size: 1.8rem; font-weight:700; color: var(--cyan); margin-bottom:12px; font-family:var(--font-mono);">PHASE 01</div>
+                    <h3 style="margin-bottom:8px;">Operational Audit</h3>
+                    <p style="font-size:0.85rem; color:var(--text-muted);">Analyze daily fleet routes, idle durations, and average depot voltage inflows.</p>
+                </div>
+                <div class="card" style="padding: 30px; transition: var(--transition-normal);" data-aos="fade-up" data-aos-delay="200">
+                    <div style="font-size: 1.8rem; font-weight:700; color: var(--cyan); margin-bottom:12px; font-family:var(--font-mono);">PHASE 02</div>
+                    <h3 style="margin-bottom:8px;">Substation Fit</h3>
+                    <p style="font-size:0.85rem; color:var(--text-muted);">Install megawatt charger terminals and backup battery energy buffers on site.</p>
+                </div>
+                <div class="card" style="padding: 30px; transition: var(--transition-normal);" data-aos="fade-up" data-aos-delay="300">
+                    <div style="font-size: 1.8rem; font-weight:700; color: var(--cyan); margin-bottom:12px; font-family:var(--font-mono);">PHASE 03</div>
+                    <h3 style="margin-bottom:8px;">Telematics Sync</h3>
+                    <p style="font-size:0.85rem; color:var(--text-muted);">Sync vehicle telematics directly to Stackly Grid's dynamic load balancer APIs.</p>
+                </div>
+                <div class="card" style="padding: 30px; transition: var(--transition-normal);" data-aos="fade-up" data-aos-delay="400">
+                    <div style="font-size: 1.8rem; font-weight:700; color: var(--cyan); margin-bottom:12px; font-family:var(--font-mono);">PHASE 04</div>
+                    <h3 style="margin-bottom:8px;">Shaving Profit</h3>
+                    <p style="font-size:0.85rem; color:var(--text-muted);">Leverage V2G bidirectional discharge payouts during high peak pricing intervals.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 2: Second Life Battery Timeline -->
+    <section class="battery-second-life" style="padding: 100px 0; background: var(--bg-graphite);" data-aos="fade-up">
+        <div class="container">
+            <div class="text-center" style="margin-bottom: 60px;">
+                <span class="tech-badge" style="background: rgba(0, 255, 204, 0.08); color: var(--cyan); border: 1px solid rgba(0, 255, 204, 0.15);">CIRCULAR ECONOMY</span>
+                <h2 style="font-size: 2.5rem; margin-top: 15px;">Battery Repurposing Pipeline</h2>
+                <p style="color: var(--text-muted); max-width: 600px; margin: 16px auto 0;">Ensuring sustainability by repurposing electric vehicle batteries as stationary grid backup storage.</p>
+            </div>
+            <div class="about-timeline">
+                <div class="timeline-item" data-aos="fade-left" data-aos-delay="100">
+                    <div class="timeline-year">STEP 01</div>
+                    <div class="timeline-card">
+                        <h3>EV Active Life</h3>
+                        <p style="font-size: 0.9rem; color: var(--text-muted); margin-top: 8px;">Vehicle battery operates at maximum efficiency under passenger or freight operations.</p>
+                    </div>
+                </div>
+                <div class="timeline-item" data-aos="fade-left" data-aos-delay="200">
+                    <div class="timeline-year">STEP 02</div>
+                    <div class="timeline-card">
+                        <h3>Repurposing Audit</h3>
+                        <p style="font-size: 0.9rem; color: var(--text-muted); margin-top: 8px;">Retired EV battery modules are audited and certified for static energy storage capabilities.</p>
+                    </div>
+                </div>
+                <div class="timeline-item" data-aos="fade-left" data-aos-delay="300">
+                    <div class="timeline-year">STEP 03</div>
+                    <div class="timeline-card">
+                        <h3>Stationary Grid Support</h3>
+                        <p style="font-size: 0.9rem; color: var(--text-muted); margin-top: 8px;">Repurposed batteries are consolidated into massive containerized grid backups at renewable substations.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 3: Live Generation Source Matrix -->
+    <section class="generation-matrix" style="padding: 100px 0; background: var(--bg-graphite-light); border-top: 1px solid var(--border-color);" data-aos="fade-up">
+        <div class="container">
+            <div class="text-center" style="margin-bottom: 40px;">
+                <span class="tech-badge" style="background: rgba(0, 255, 204, 0.08); color: var(--cyan); border: 1px solid rgba(0, 255, 204, 0.15);">ZERO CARBON ENERGY SOURCE</span>
+                <h2 style="font-size: 2.5rem; margin-top: 15px;">Real-Time Clean Energy Source Matrix</h2>
+                <p style="color: var(--text-muted); max-width: 600px; margin: 16px auto 0;">Current dispatch balance across renewable generation substations connected to our hubs.</p>
+            </div>
+            <div class="card" style="max-width: 800px; margin: 0 auto; padding: 40px;">
+                <div class="energy-source-container">
+                    <div class="energy-bar-wrap">
+                        <div class="energy-bar-lbl">
+                            <span>Solar Substation Feed-C</span>
+                            <span style="font-family:var(--font-mono); color:var(--cyan);">45%</span>
+                        </div>
+                        <div class="energy-bar-bg">
+                            <div class="energy-bar-fill" style="width: 45%; background: var(--cyan);"></div>
+                        </div>
+                    </div>
+                    <div class="energy-bar-wrap">
+                        <div class="energy-bar-lbl">
+                            <span>Wind Turbine Farm B</span>
+                            <span style="font-family:var(--font-mono); color:var(--lime);">30%</span>
+                        </div>
+                        <div class="energy-bar-bg">
+                            <div class="energy-bar-fill" style="width: 30%; background: var(--lime);"></div>
+                        </div>
+                    </div>
+                    <div class="energy-bar-wrap">
+                        <div class="energy-bar-lbl">
+                            <span>Second-Life Battery Reserves</span>
+                            <span style="font-family:var(--font-mono); color:var(--cyan);">15%</span>
+                        </div>
+                        <div class="energy-bar-bg">
+                            <div class="energy-bar-fill" style="width: 15%; background: var(--cyan);"></div>
+                        </div>
+                    </div>
+                    <div class="energy-bar-wrap">
+                        <div class="energy-bar-lbl">
+                            <span>Regional Microgrid Reserves</span>
+                            <span style="font-family:var(--font-mono); color:var(--text-muted);">10%</span>
+                        </div>
+                        <div class="energy-bar-bg">
+                            <div class="energy-bar-fill" style="width: 10%; background: rgba(255,255,255,0.15);"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<footer class="footer">
         <div class="container">
             <div class="footer-top-grid">
                 <!-- Brand Column -->
@@ -303,6 +439,24 @@
     <!-- Scripts -->
 
     <!-- Scripts -->
-    <script src="shared.js"></script>
-    </body>
+    
+        
+
+    <!-- Shared JS Functions -->
+    <script src="shared.js?v=1.1"></script>
+    
+
+    <!-- Shared JS Functions -->
+    <script src="shared.js?v=1.1"></script>
+    <!-- AOS Scroll Animations Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true,
+            mirror: false
+        });
+    </script>
+</body>
 </html>

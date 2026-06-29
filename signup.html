@@ -6,7 +6,7 @@
     <title>Sign Up - Stackly Grid</title>
     <meta name="description" content="Join the intelligent electrical mobility network. Create an account today.">
     <!-- Styles -->
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css?v=1.1">
     <!-- Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
@@ -200,7 +200,28 @@
 
             if (!isValid) return;
 
-            // Save registered details temporarily (same functionality as waste management / adventure sports)
+            // Check if email already exists in users database
+            let dbUsers = JSON.parse(localStorage.getItem('users')) || [];
+            const emailExists = dbUsers.some(u => u.email.toLowerCase() === email.toLowerCase());
+            if (emailExists) {
+                showError('email', 'This email is already registered.');
+                return;
+            }
+
+            // Create new user object and append to database
+            const newUser = {
+                name: name,
+                email: email,
+                phone: phone,
+                password: password,
+                role: 'user', // Default role is user for new registrations
+                joined: new Date().toISOString().split('T')[0],
+                vehicles: []
+            };
+            dbUsers.push(newUser);
+            localStorage.setItem('users', JSON.stringify(dbUsers));
+
+            // Save registered details temporarily for convenience (pre-filling email on login screen)
             localStorage.setItem('em_reg_email', email);
             localStorage.setItem('em_reg_name', name);
 

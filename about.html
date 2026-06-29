@@ -6,9 +6,26 @@
     <title>About Us - Stackly Grid</title>
     <meta name="description" content="Discover the story, mission, and leadership team behind Stackly Grid's connected mobility ecosystem.">
     <!-- Styles -->
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css?v=1.1">
     <!-- FontAwesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- AOS Scroll Animations -->
+    
+
+    <!-- AOS Loading Fallback Protection -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            setTimeout(function() {
+                if (typeof AOS === 'undefined' || !document.documentElement.classList.contains('aos-init')) {
+                    var style = document.createElement('style');
+                    style.id = 'aos-fallback';
+                    style.textContent = '[data-aos] { opacity: 1 !important; transform: none !important; transition: none !important; }';
+                    document.head.appendChild(style);
+                    console.log('AOS fallback activated');
+                }
+            }, 1200);
+        });
+    </script>
 </head>
 <body>
 
@@ -65,7 +82,7 @@
     </section>
 
     <!-- SECTION 2: STATS & STORY -->
-    <section class="section-padding">
+    <section class="section-padding" data-aos="fade-up">
         <div class="container">
             <div class="grid-2" style="gap: 60px; align-items: center;">
                 <div>
@@ -110,7 +127,7 @@
     </section>
 
     <!-- SECTION 3: LEADERSHIP TEAM -->
-    <section class="section-padding bg-graphite-light" style="border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color);">
+    <section class="section-padding bg-graphite-light" style="border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color);" data-aos="fade-up">
         <div class="container">
             <div class="section-header">
                 <span class="badge badge-purple">Grid Officers</span>
@@ -142,7 +159,115 @@
     </section>
 
     <!-- FOOTER -->
-    <footer class="footer">
+    
+    <!-- Section 1: Core Values -->
+    <section class="about-values" style="padding: 100px 0; background: var(--bg-graphite-light); border-top: 1px solid var(--border-color);" data-aos="fade-up">
+        <div class="container">
+            <div class="text-center" style="margin-bottom: 60px;">
+                <span class="tech-badge" style="background: rgba(0, 255, 204, 0.08); color: var(--cyan); border: 1px solid rgba(0, 255, 204, 0.15);">GUIDING PILLARS</span>
+                <h2 style="font-size: 2.5rem; margin-top: 15px;">Stackly Grid Core Values</h2>
+                <p style="color: var(--text-muted); max-width: 600px; margin: 16px auto 0;">The foundational engineering principles that dictate our daily load-balancing operations.</p>
+            </div>
+            <div class="grid-4">
+                <div class="card" style="padding: 30px; text-align:center;" data-aos="fade-up" data-aos-delay="100">
+                    <div class="card-icon card-icon-cyan" style="font-size:2rem; width:50px; height:50px; border-radius:8px; display:flex; align-items:center; justify-content:center; margin:0 auto 20px; background:rgba(0,255,204,0.08); color:var(--cyan);"><i class="fa-solid fa-shield-heart"></i></div>
+                    <h3 style="margin-bottom:10px;">Grid Reliability</h3>
+                    <p style="font-size:0.85rem; color:var(--text-muted);">Continuous system backups and frequency stabilizers ensure uninterrupted load shaving operations.</p>
+                </div>
+                <div class="card" style="padding: 30px; text-align:center;" data-aos="fade-up" data-aos-delay="200">
+                    <div class="card-icon card-icon-lime" style="font-size:2rem; width:50px; height:50px; border-radius:8px; display:flex; align-items:center; justify-content:center; margin:0 auto 20px; background:rgba(9,90,59,0.08); color:var(--lime);"><i class="fa-solid fa-earth-americas"></i></div>
+                    <h3 style="margin-bottom:10px;">Resilience</h3>
+                    <p style="font-size:0.85rem; color:var(--text-muted);">Empowering regional energy grids to absorb renewable surges and prevent brownouts.</p>
+                </div>
+                <div class="card" style="padding: 30px; text-align:center;" data-aos="fade-up" data-aos-delay="300">
+                    <div class="card-icon card-icon-cyan" style="font-size:2rem; width:50px; height:50px; border-radius:8px; display:flex; align-items:center; justify-content:center; margin:0 auto 20px; background:rgba(0,255,204,0.08); color:var(--cyan);"><i class="fa-solid fa-code"></i></div>
+                    <h3 style="margin-bottom:10px;">Open Standards</h3>
+                    <p style="font-size:0.85rem; color:var(--text-muted);">OCPP-compliant hardware compatibility guarantees open, modular infrastructure scaling.</p>
+                </div>
+                <div class="card" style="padding: 30px; text-align:center;" data-aos="fade-up" data-aos-delay="400">
+                    <div class="card-icon card-icon-lime" style="font-size:2rem; width:50px; height:50px; border-radius:8px; display:flex; align-items:center; justify-content:center; margin:0 auto 20px; background:rgba(9,90,59,0.08); color:var(--lime);"><i class="fa-solid fa-users"></i></div>
+                    <h3 style="margin-bottom:10px;">Empowerment</h3>
+                    <p style="font-size:0.85rem; color:var(--text-muted);">Passing peak cost savings directly back to consumers and corporate fleet managers.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 2: Timeline Milestones -->
+    <section class="about-timeline-section" style="padding: 100px 0; background: var(--bg-graphite);" data-aos="fade-up">
+        <div class="container">
+            <div class="text-center" style="margin-bottom: 60px;">
+                <span class="tech-badge" style="background: rgba(0, 255, 204, 0.08); color: var(--cyan); border: 1px solid rgba(0, 255, 204, 0.15);">HISTORY & EVOLUTION</span>
+                <h2 style="font-size: 2.5rem; margin-top: 15px;">Historical Milestones</h2>
+                <p style="color: var(--text-muted); max-width: 600px; margin: 16px auto 0;">Tracing our path from inception to national grid telemetry balancing.</p>
+            </div>
+            <div class="about-timeline">
+                <div class="timeline-item" data-aos="fade-left" data-aos-delay="100">
+                    <div class="timeline-year">2022</div>
+                    <div class="timeline-card">
+                        <h3>Foundation & Initial Handshake</h3>
+                        <p style="font-size: 0.9rem; color: var(--text-muted); margin-top: 8px;">Stackly Grid is founded by clean energy engineers with the goal of writing the OCPP load-balancing protocol.</p>
+                    </div>
+                </div>
+                <div class="timeline-item" data-aos="fade-left" data-aos-delay="200">
+                    <div class="timeline-year">2023</div>
+                    <div class="timeline-card">
+                        <h3>First Megawatt Substation Integration</h3>
+                        <p style="font-size: 0.9rem; color: var(--text-muted); margin-top: 8px;">Deployed first liquid-cooled megawatt DC charger corridor across Logistics Corridor 10A.</p>
+                    </div>
+                </div>
+                <div class="timeline-item" data-aos="fade-left" data-aos-delay="300">
+                    <div class="timeline-year">2024</div>
+                    <div class="timeline-card">
+                        <h3>10k Active Fleet Sync</h3>
+                        <p style="font-size: 0.9rem; color: var(--text-muted); margin-top: 8px;">Synchronized over 10,000 corporate electric fleet delivery vehicles to our load-dispatch server cluster.</p>
+                    </div>
+                </div>
+                <div class="timeline-item" data-aos="fade-left" data-aos-delay="400">
+                    <div class="timeline-year">2025</div>
+                    <div class="timeline-card">
+                        <h3>AI Peak Load Shaving Deployment</h3>
+                        <p style="font-size: 0.9rem; color: var(--text-muted); margin-top: 8px;">Integrated dynamic neural grid predictive models to forecast local brownout risks and shunt loads autonomously.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 3: Global Certifications Grid -->
+    <section class="about-certs" style="padding: 100px 0; background: var(--bg-graphite-light); border-top: 1px solid var(--border-color);" data-aos="fade-up">
+        <div class="container">
+            <div class="text-center" style="margin-bottom: 40px;">
+                <span class="tech-badge" style="background: rgba(0, 255, 204, 0.08); color: var(--cyan); border: 1px solid rgba(0, 255, 204, 0.15);">AUDITED OPERATIONS</span>
+                <h2 style="font-size: 2.5rem; margin-top: 15px;">Safety & Quality Certifications</h2>
+                <p style="color: var(--text-muted); max-width: 600px; margin: 16px auto 0;">Operational security audited by global third-party green energy organizations.</p>
+            </div>
+            <div class="cert-grid">
+                <div class="cert-card" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="cert-icon"><i class="fa-solid fa-medal"></i></div>
+                    <h4>ISO 14001</h4>
+                    <p style="font-size:0.8rem; color:var(--text-muted); margin-top:8px;">Environmental Management Standards Certified.</p>
+                </div>
+                <div class="cert-card" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="cert-icon" style="color:var(--lime);"><i class="fa-solid fa-network-wired"></i></div>
+                    <h4>OCPP 2.0.1</h4>
+                    <p style="font-size:0.8rem; color:var(--text-muted); margin-top:8px;">Standardized Charging Protocol Compliance.</p>
+                </div>
+                <div class="cert-card" data-aos="zoom-in" data-aos-delay="300">
+                    <div class="cert-icon"><i class="fa-solid fa-building-shield"></i></div>
+                    <h4>SOC 2 Type II</h4>
+                    <p style="font-size:0.8rem; color:var(--text-muted); margin-top:8px;">Continuous Platform Safety Audited.</p>
+                </div>
+                <div class="cert-card" data-aos="zoom-in" data-aos-delay="400">
+                    <div class="cert-icon" style="color:var(--lime);"><i class="fa-solid fa-leaf"></i></div>
+                    <h4>LEED Platinum</h4>
+                    <p style="font-size:0.8rem; color:var(--text-muted); margin-top:8px;">Energy Efficient Substation Architecture.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<footer class="footer">
         <div class="container">
             <div class="footer-top-grid">
                 <!-- Brand Column -->
@@ -219,6 +344,24 @@
     </footer>
 
     <!-- Scripts -->
-    <script src="shared.js"></script>
-    </body>
+    
+        
+
+    <!-- Shared JS Functions -->
+    <script src="shared.js?v=1.1"></script>
+    
+
+    <!-- Shared JS Functions -->
+    <script src="shared.js?v=1.1"></script>
+    <!-- AOS Scroll Animations Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true,
+            mirror: false
+        });
+    </script>
+</body>
 </html>

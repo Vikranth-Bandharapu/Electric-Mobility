@@ -5,9 +5,44 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Energy Control Center - Stackly Grid</title>
     <!-- Styles -->
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css?v=1.1">
     <!-- Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- Header responsive overrides (caching protection) -->
+    <style>
+        @media (max-width: 992px) {
+            .db-header {
+                padding: 10px 20px;
+                min-height: 80px;
+                height: auto;
+            }
+            .db-title {
+                font-size: 1.2rem !important;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                min-width: 0;
+                flex: 1;
+            }
+            .db-user-pill {
+                padding: 4px !important;
+                background: transparent !important;
+                border: none !important;
+            }
+            .db-user-pill .display-name {
+                display: none !important;
+            }
+            .db-table td, .db-table th {
+                white-space: normal !important;
+                word-break: break-word !important;
+            }
+        }
+        @media (max-width: 580px) {
+            .db-title {
+                font-size: 1.05rem !important;
+            }
+        }
+    </style>
 </head>
 <body class="dashboard-wrapper">
 
@@ -28,24 +63,25 @@
             <li><a class="sidebar-link" onclick="switchDbSection('grid')"><i class="fa-solid fa-circle-nodes"></i> Grid Monitoring</a></li>
             <li><a class="sidebar-link" onclick="switchDbSection('reports')"><i class="fa-solid fa-file-invoice"></i> Reports</a></li>
             <li><a class="sidebar-link" onclick="switchDbSection('settings')"><i class="fa-solid fa-sliders"></i> Settings</a></li>
-            <li style="margin-top: auto;"><a  href= "404.html"><i class="fa-solid fa-right-from-bracket"></i> Logout</a></li>
+            <li style="margin-top: auto;"><a href="index.html" onclick="sessionStorage.removeItem('currentUser')"><i class="fa-solid fa-right-from-bracket"></i> Logout</a></li>
         </ul>
 
         <div class="sidebar-footer">
             <i class="fa-solid fa-user-shield"></i> <span class="display-email">admin@stackly.com</span>
         </div>
     </aside>
+    <div class="sidebar-overlay" id="sidebar-overlay"></div>
 
     <!-- Main Content Area -->
     <main class="db-main">
         <!-- Top bar -->
         <header class="db-header">
-            <div style="display: flex; align-items: center; gap: 16px;">
+            <div style="display: flex; align-items: center; gap: 16px; min-width: 0; flex: 1; margin-right: 12px;">
                 <!-- Mobile sidebar toggle -->
-                <button class="btn btn-secondary btn-sm" id="sidebar-toggle" style="display: none; padding: 6px 10px;">
+                <button class="btn btn-secondary btn-sm" id="sidebar-toggle" style="display: none; padding: 6px 10px; flex-shrink: 0;">
                     <i class="fa-solid fa-bars"></i>
                 </button>
-                <div class="db-title" id="section-title">Energy Control Center</div>
+                <div class="db-title" id="section-title" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">Energy Control Center</div>
             </div>
             
             <div class="db-user-pill">
@@ -450,8 +486,12 @@
             
             // Close sidebar on mobile after clicking
             const sidebar = document.getElementById('db-sidebar');
+            const sidebarOverlay = document.getElementById('sidebar-overlay');
             if (sidebar.classList.contains('active')) {
                 sidebar.classList.remove('active');
+                if (sidebarOverlay) {
+                    sidebarOverlay.classList.remove('active');
+                }
             }
 
             // If switching to user view, populate user list
@@ -463,11 +503,18 @@
         // Sidebar Mobile Toggle
         const sideToggle = document.getElementById('sidebar-toggle');
         const sidebar = document.getElementById('db-sidebar');
+        const sidebarOverlay = document.getElementById('sidebar-overlay');
         if (sideToggle && sidebar) {
-            sideToggle.style.display = 'block';
-            sideToggle.addEventListener('click', () => {
+            const toggleSidebar = () => {
                 sidebar.classList.toggle('active');
-            });
+                if (sidebarOverlay) {
+                    sidebarOverlay.classList.toggle('active');
+                }
+            };
+            sideToggle.addEventListener('click', toggleSidebar);
+            if (sidebarOverlay) {
+                sidebarOverlay.addEventListener('click', toggleSidebar);
+            }
         }
 
         // Render dynamically user list from LocalStorage

@@ -6,7 +6,7 @@
     <title>Login - Stackly Grid</title>
     <meta name="description" content="Access the Energy Control Center or Personal Energy Hub.">
     <!-- Styles -->
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css?v=1.1">
     <!-- Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
@@ -213,12 +213,21 @@
 
             if (!isValid) return;
 
-            // Generate active session data on the fly (same functionality as waste management / adventure sports)
-            const nameFromEmail = email.split('@')[0];
-            const capitalizedName = nameFromEmail.charAt(0).toUpperCase() + nameFromEmail.slice(1);
+            // Generate active session data on the fly (same functionality as adventures sports)
+            let displayName = role === 'admin' ? 'Grid Admin' : '';
+            if (role !== 'admin') {
+                const dbUsers = JSON.parse(localStorage.getItem('users')) || [];
+                const matchedUser = dbUsers.find(u => u.email.toLowerCase() === email.toLowerCase());
+                if (matchedUser) {
+                    displayName = matchedUser.name;
+                } else {
+                    const nameFromEmail = email.split('@')[0];
+                    displayName = nameFromEmail.charAt(0).toUpperCase() + nameFromEmail.slice(1);
+                }
+            }
             
             const currentUser = {
-                name: role === 'admin' ? 'Grid Admin' : capitalizedName,
+                name: displayName,
                 email: email,
                 role: role,
                 joined: new Date().toISOString().split('T')[0]

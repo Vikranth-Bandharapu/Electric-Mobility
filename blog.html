@@ -6,9 +6,26 @@
     <title>Insights & Articles - Stackly Grid</title>
     <meta name="description" content="Stay up to date with bidirectional charging networks, microgrid balancing, and telemetry software.">
     <!-- Styles -->
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css?v=1.1">
     <!-- FontAwesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- AOS Scroll Animations -->
+    
+
+    <!-- AOS Loading Fallback Protection -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            setTimeout(function() {
+                if (typeof AOS === 'undefined' || !document.documentElement.classList.contains('aos-init')) {
+                    var style = document.createElement('style');
+                    style.id = 'aos-fallback';
+                    style.textContent = '[data-aos] { opacity: 1 !important; transform: none !important; transition: none !important; }';
+                    document.head.appendChild(style);
+                    console.log('AOS fallback activated');
+                }
+            }, 1200);
+        });
+    </script>
 </head>
 <body>
 
@@ -65,7 +82,7 @@
     </section>
 
     <!-- SECTION 2: BLOG CONTENT AREA -->
-    <section class="section-padding" style="padding-top: 50px;">
+    <section class="section-padding" style="padding-top: 50px;" data-aos="fade-up">
         <div class="container">
             <div class="blog-container-modern">
                 
@@ -233,7 +250,114 @@
     </section>
 
     <!-- FOOTER -->
-    <footer class="footer">
+    
+    <!-- Section 1: Research Publications & Whitepapers -->
+    <section class="research-publications" style="padding: 80px 0; background: var(--bg-graphite-light); border-top: 1px solid var(--border-color);" data-aos="fade-up">
+        <div class="container">
+            <div class="text-center" style="margin-bottom: 60px;">
+                <span class="tech-badge" style="background: rgba(0, 255, 204, 0.08); color: var(--cyan); border: 1px solid rgba(0, 255, 204, 0.15);">TECHNICAL PUBLICATIONS</span>
+                <h2 style="font-size: 2.5rem; margin-top: 15px;">Smart Grid Research Library</h2>
+                <p style="color: var(--text-muted); max-width: 600px; margin: 16px auto 0;">Deep-dive technical whitepapers authored by our platform architecture engineers.</p>
+            </div>
+            <div class="grid-3">
+                <div class="card" style="padding: 30px; display:flex; flex-direction:column; justify-content:space-between; transition: var(--transition-normal);" data-aos="fade-up" data-aos-delay="100">
+                    <div>
+                        <div style="font-size:0.75rem; color:var(--cyan); font-family:var(--font-mono); margin-bottom:8px; text-transform:uppercase;">Whitepaper // V2G</div>
+                        <h3 style="margin-bottom:12px;">Bidirectional Microgrid Efficiencies</h3>
+                        <p style="font-size:0.85rem; color:var(--text-muted); line-height:1.6;">Detailed analysis on local distribution line loss factors during battery shunts.</p>
+                    </div>
+                    <a href="404.html" class="btn btn-secondary btn-sm" style="margin-top:20px; align-self:flex-start;"><i class="fa-solid fa-file-pdf"></i> Download PDF</a>
+                </div>
+                <div class="card" style="padding: 30px; display:flex; flex-direction:column; justify-content:space-between; transition: var(--transition-normal);" data-aos="fade-up" data-aos-delay="200">
+                    <div>
+                        <div style="font-size:0.75rem; color:var(--lime); font-family:var(--font-mono); margin-bottom:8px; text-transform:uppercase;">Research // Load Balancer</div>
+                        <h3 style="margin-bottom:12px;">Neural Grid Demand Forecasting Models</h3>
+                        <p style="font-size:0.85rem; color:var(--text-muted); line-height:1.6;">Predicting brownout indicators with dynamic load shedding in commercial charging corridors.</p>
+                    </div>
+                    <a href="404.html" class="btn btn-secondary btn-sm" style="margin-top:20px; align-self:flex-start;"><i class="fa-solid fa-file-pdf"></i> Download PDF</a>
+                </div>
+                <div class="card" style="padding: 30px; display:flex; flex-direction:column; justify-content:space-between; transition: var(--transition-normal);" data-aos="fade-up" data-aos-delay="300">
+                    <div>
+                        <div style="font-size:0.75rem; color:var(--cyan); font-family:var(--font-mono); margin-bottom:8px; text-transform:uppercase;">Protocol // OCPP 2.1</div>
+                        <h3 style="margin-bottom:12px;">Modular Megawatt Charging Standard</h3>
+                        <p style="font-size:0.85rem; color:var(--text-muted); line-height:1.6;">Specifications audit of OCPP 2.1 messaging formats for Class-8 vehicle handshake routing.</p>
+                    </div>
+                    <a href="404.html" class="btn btn-secondary btn-sm" style="margin-top:20px; align-self:flex-start;"><i class="fa-solid fa-file-pdf"></i> Download PDF</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 2: Webinar / Live Event scheduler -->
+    <section class="live-events" style="padding: 80px 0; background: var(--bg-graphite);" data-aos="fade-up">
+        <div class="container">
+            <div class="text-center" style="margin-bottom: 60px;">
+                <span class="tech-badge" style="background: rgba(0, 255, 204, 0.08); color: var(--cyan); border: 1px solid rgba(0, 255, 204, 0.15);">ON-DEMAND EDUCATION</span>
+                <h2 style="font-size: 2.5rem; margin-top: 15px;">Upcoming Grid Webinars</h2>
+                <p style="color: var(--text-muted); max-width: 600px; margin: 16px auto 0;">Register to participate in live tech discussions and Q&A sessions with the team.</p>
+            </div>
+            <div class="grid-2">
+                <div class="card" style="padding: 30px; display:flex; align-items:center; gap:20px;" data-aos="fade-right" data-aos-delay="100">
+                    <div style="text-align:center; padding:15px; border-radius:12px; background:rgba(0, 255, 204, 0.05); border:1px solid rgba(0, 255, 204, 0.15); min-width:90px;">
+                        <div style="font-family:var(--font-mono); font-size:1.5rem; font-weight:700; color:var(--cyan);">JUL 14</div>
+                        <div style="font-size:0.75rem; color:var(--text-muted); font-weight:600; margin-top:4px;">Webinar</div>
+                    </div>
+                    <div>
+                        <h4 style="color:var(--text-primary); font-size:1.15rem; margin-bottom:6px;">Decarbonizing Logistics Fleets</h4>
+                        <p style="font-size:0.85rem; color:var(--text-muted); margin-bottom:12px;">Sponsor: Clean Fleet Council | Duration: 45 min</p>
+                        <a href="404.html" style="font-size:0.85rem; color:var(--cyan); font-weight:600; text-decoration:none;"><i class="fa-solid fa-circle-play"></i> Register for Event</a>
+                    </div>
+                </div>
+                <div class="card" style="padding: 30px; display:flex; align-items:center; gap:20px;" data-aos="fade-right" data-aos-delay="200">
+                    <div style="text-align:center; padding:15px; border-radius:12px; background:rgba(16, 185, 129, 0.05); border:1px solid rgba(16, 185, 129, 0.15); min-width:90px;">
+                        <div style="font-family:var(--font-mono); font-size:1.5rem; font-weight:700; color:var(--lime);">AUG 05</div>
+                        <div style="font-size:0.75rem; color:var(--text-muted); font-weight:600; margin-top:4px;">Tech Talk</div>
+                    </div>
+                    <div>
+                        <h4 style="color:var(--text-primary); font-size:1.15rem; margin-bottom:6px;">Next-Gen Bidirectional Shaving</h4>
+                        <p style="font-size:0.85rem; color:var(--text-muted); margin-bottom:12px;">Presenter: Chief Architect | Duration: 60 min</p>
+                        <a href="404.html" style="font-size:0.85rem; color:var(--lime); font-weight:600; text-decoration:none;"><i class="fa-solid fa-circle-play"></i> Register for Event</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 3: Tech Contributors list -->
+    <section class="contributors-spotlight" style="padding: 80px 0; background: var(--bg-graphite-light); border-top: 1px solid var(--border-color);" data-aos="fade-up">
+        <div class="container">
+            <div class="text-center" style="margin-bottom: 40px;">
+                <span class="tech-badge" style="background: rgba(0, 255, 204, 0.08); color: var(--cyan); border: 1px solid rgba(0, 255, 204, 0.15);">GRID THINKERS</span>
+                <h2 style="font-size: 2.5rem; margin-top: 15px;">Featured Tech Contributors</h2>
+                <p style="color: var(--text-muted); max-width: 600px; margin: 16px auto 0;">Meet the engineers authoring Whitepapers and code updates for Stackly Grid.</p>
+            </div>
+            <div class="grid-3">
+                <div class="card" style="padding: 24px; display:flex; align-items:center; gap:16px;" data-aos="zoom-in" data-aos-delay="100">
+                    <div style="width:50px; height:50px; border-radius:50%; background:linear-gradient(135deg, var(--cyan) 0%, var(--lime) 100%); display:flex; align-items:center; justify-content:center; font-weight:700; font-family:var(--font-mono); color:var(--white);">DR</div>
+                    <div>
+                        <h4 style="color:var(--text-primary); margin-bottom:2px;">Dr. Sarah Chen</h4>
+                        <p style="font-size:0.75rem; color:var(--text-muted);">Lead Researcher, Microgrid Integrations</p>
+                    </div>
+                </div>
+                <div class="card" style="padding: 24px; display:flex; align-items:center; gap:16px;" data-aos="zoom-in" data-aos-delay="200">
+                    <div style="width:50px; height:50px; border-radius:50%; background:linear-gradient(135deg, var(--cyan) 0%, var(--lime) 100%); display:flex; align-items:center; justify-content:center; font-weight:700; font-family:var(--font-mono); color:var(--white);">EM</div>
+                    <div>
+                        <h4 style="color:var(--text-primary); margin-bottom:2px;">Erik Mercer</h4>
+                        <p style="font-size:0.75rem; color:var(--text-muted);">Principal Architect, Load Balancer</p>
+                    </div>
+                </div>
+                <div class="card" style="padding: 24px; display:flex; align-items:center; gap:16px;" data-aos="zoom-in" data-aos-delay="300">
+                    <div style="width:50px; height:50px; border-radius:50%; background:linear-gradient(135deg, var(--cyan) 0%, var(--lime) 100%); display:flex; align-items:center; justify-content:center; font-weight:700; font-family:var(--font-mono); color:var(--white);">TL</div>
+                    <div>
+                        <h4 style="color:var(--text-primary); margin-bottom:2px;">Tanya Lin</h4>
+                        <p style="font-size:0.75rem; color:var(--text-muted);">Senior Developer, OCPP Protocols</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<footer class="footer">
         <div class="container">
             <div class="footer-top-grid">
                 <!-- Brand Column -->
@@ -311,7 +435,7 @@
     <button id="scrollTop" aria-label="Scroll to top"><i class="fa-solid fa-chevron-up"></i></button>
 
     <!-- Scripts -->
-    <script src="shared.js"></script>
+    
     <script>
         // Dynamic Filtering and Search logic
         const searchInput = document.getElementById('blogSearchInput');
@@ -419,6 +543,24 @@
             emailInput.style.borderColor = 'var(--border-color)';
             msgEl.style.color = 'var(--lime)';
             msgEl.textContent = 'Subscription successful! Thank you.';
+        });
+    </script>
+    
+
+    <!-- Shared JS Functions -->
+    <script src="shared.js?v=1.1"></script>
+    
+
+    <!-- Shared JS Functions -->
+    <script src="shared.js?v=1.1"></script>
+    <!-- AOS Scroll Animations Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true,
+            mirror: false
         });
     </script>
 </body>

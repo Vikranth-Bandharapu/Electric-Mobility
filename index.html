@@ -6,9 +6,26 @@
     <title>Stackly Grid - Intelligent Energy Flow & Smart Mobility</title>
     <meta name="description" content="Next-generation electrical mobility grid routing vehicles, charging hubs, storage arrays, and renewable energy.">
     <!-- Styles -->
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css?v=1.1">
     <!-- FontAwesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- AOS Scroll Animations -->
+    
+
+    <!-- AOS Loading Fallback Protection -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            setTimeout(function() {
+                if (typeof AOS === 'undefined' || !document.documentElement.classList.contains('aos-init')) {
+                    var style = document.createElement('style');
+                    style.id = 'aos-fallback';
+                    style.textContent = '[data-aos] { opacity: 1 !important; transform: none !important; transition: none !important; }';
+                    document.head.appendChild(style);
+                    console.log('AOS fallback activated');
+                }
+            }, 1200);
+        });
+    </script>
 </head>
 <body>
 
@@ -86,7 +103,7 @@
         </section>
 
         <!-- SECTION 2: Mobility Ecosystem -->
-        <section class="section-padding ecosystem-section" style="border-top: 1px solid var(--border-color);">
+        <section class="section-padding ecosystem-section" style="border-top: 1px solid var(--border-color);" data-aos="fade-up">
             <div class="container">
                 <div class="section-header">
                     <span class="badge badge-purple">Eco-Grid Matrix</span>
@@ -159,7 +176,7 @@
         </section>
 
         <!-- SECTION 3: Live Energy Flow -->
-        <section class="section-padding bg-graphite-light" style="border-top: 1px solid var(--border-color);">
+        <section class="section-padding bg-graphite-light" style="border-top: 1px solid var(--border-color);" data-aos="fade-up">
             <div class="container">
                 <div class="section-header">
                     <span class="badge badge-cyan">Telemetry Visualizer</span>
@@ -224,7 +241,7 @@
         </section>
 
         <!-- SECTION 4: Smart Charging Intelligence -->
-        <section class="section-padding" style="border-top: 1px solid var(--border-color);">
+        <section class="section-padding" style="border-top: 1px solid var(--border-color);" data-aos="fade-up">
             <div class="container">
                 <div class="section-header">
                     <span class="badge badge-purple">Load Optimization</span>
@@ -258,7 +275,7 @@
         </section>
 
         <!-- SECTION 5: Renewable Energy Integration -->
-        <section class="section-padding bg-graphite-light" style="border-top: 1px solid var(--border-color);">
+        <section class="section-padding bg-graphite-light" style="border-top: 1px solid var(--border-color);" data-aos="fade-up">
             <div class="container">
                 <div class="grid-2">
                     <div>
@@ -317,7 +334,7 @@
         </section>
 
         <!-- SECTION 6: Network Analytics -->
-        <section class="section-padding analytics-section" style="border-top: 1px solid var(--border-color);">
+        <section class="section-padding analytics-section" style="border-top: 1px solid var(--border-color);" data-aos="fade-up">
             <div class="container">
                 <div class="analytics-grid">
                     <div class="analytic-card analytic-card-cyan animate-on-scroll">
@@ -341,7 +358,7 @@
         </section>
 
         <!-- SECTION 7: Future Mobility Lab -->
-        <section class="section-padding bg-graphite-light" style="border-top: 1px solid var(--border-color);">
+        <section class="section-padding bg-graphite-light" style="border-top: 1px solid var(--border-color);" data-aos="fade-up">
             <div class="container">
                 <div class="section-header">
                     <span class="badge badge-purple">Next Gen Tech</span>
@@ -375,7 +392,7 @@
         </section>
 
         <!-- SECTION 8: Industry Partners -->
-        <section class="marquee-container" style="border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color);">
+        <section class="marquee-container" style="border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color);" data-aos="fade-up">
             <div class="marquee-content">
                 <!-- Double set of logos for infinite marquee effect -->
                 <div class="marquee-logo"><i class="fa-solid fa-solar-panel"></i> Helios Solar</div>
@@ -393,7 +410,7 @@
         </section>
 
         <!-- SECTION 9: Community Impact -->
-        <section class="section-padding" style="border-top: 1px solid var(--border-color);">
+        <section class="section-padding" style="border-top: 1px solid var(--border-color);" data-aos="fade-up">
             <div class="container">
                 <div class="section-header">
                     <span class="badge badge-lime">Environmental Telemetry</span>
@@ -438,7 +455,7 @@
         </section>
 
         <!-- CTA SECTION -->
-        <section class="cta-section">
+        <section class="cta-section" data-aos="fade-up">
             <div class="container cta-content">
                 <h2>Ready to connect your fleet?</h2>
                 <p>Register your EV and join our decentralized load-balancing ecosystem to optimize your battery consumption.</p>
@@ -452,7 +469,137 @@
     </main>
 
     <!-- FOOTER -->
-    <footer class="footer">
+    
+    <!-- Section 1: Intelligent Grid Density Map -->
+    <section class="network-stats" style="padding: 100px 0; background: var(--bg-graphite);" data-aos="fade-up">
+        <div class="container">
+            <div class="text-center" style="margin-bottom: 60px;">
+                <span class="tech-badge" style="background: rgba(0, 255, 204, 0.08); color: var(--cyan); border: 1px solid rgba(0, 255, 204, 0.15);">LIVE GRID COVERAGE</span>
+                <h2 style="font-size: 2.5rem; margin-top: 15px;">Global Load-Balancing Grid Density</h2>
+                <p style="color: var(--text-muted); max-width: 600px; margin: 16px auto 0;">Real-time node telemetry coverage across active fleet operations.</p>
+            </div>
+            <div class="grid-4">
+                <div class="metric-card-premium" data-aos="fade-up" data-aos-delay="100">
+                    <i class="fa-solid fa-map-location-dot"></i>
+                    <div class="widget-val" style="font-size: 2.2rem; margin: 12px 0;">15,420+</div>
+                    <div style="font-weight:600; color:var(--text-primary);">Active Hubs</div>
+                    <p style="font-size:0.85rem; color:var(--text-muted); margin-top:8px;">Megawatt class nodes online.</p>
+                </div>
+                <div class="metric-card-premium" data-aos="fade-up" data-aos-delay="200">
+                    <i class="fa-solid fa-bolt-lightning" style="color: var(--cyan);"></i>
+                    <div class="widget-val" style="font-size: 2.2rem; margin: 12px 0; color: var(--cyan);">99.98%</div>
+                    <div style="font-weight:600; color:var(--text-primary);">Grid Uptime</div>
+                    <p style="font-size:0.85rem; color:var(--text-muted); margin-top:8px;">Continuous load-balancing coverage.</p>
+                </div>
+                <div class="metric-card-premium" data-aos="fade-up" data-aos-delay="300">
+                    <i class="fa-solid fa-gauge-high"></i>
+                    <div class="widget-val" style="font-size: 2.2rem; margin: 12px 0;">12 sec</div>
+                    <div style="font-weight:600; color:var(--text-primary);">Dispatch Speed</div>
+                    <p style="font-size:0.85rem; color:var(--text-muted); margin-top:8px;">Load adjustment speed under peak.</p>
+                </div>
+                <div class="metric-card-premium" data-aos="fade-up" data-aos-delay="400">
+                    <i class="fa-solid fa-seedling" style="color: var(--cyan);"></i>
+                    <div class="widget-val" style="font-size: 2.2rem; margin: 12px 0; color: var(--cyan);">450k TN</div>
+                    <div style="font-weight:600; color:var(--text-primary);">CO2 Offset</div>
+                    <p style="font-size:0.85rem; color:var(--text-muted); margin-top:8px;">Aggregated zero-carbon benefit.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 2: Carbon Savings Calculator -->
+    <section class="calculator-section" style="padding: 100px 0; background: var(--bg-graphite-light); border-top: 1px solid var(--border-color);" data-aos="fade-up">
+        <div class="container">
+            <div class="text-center" style="margin-bottom: 40px;">
+                <span class="tech-badge" style="background: rgba(0, 255, 204, 0.08); color: var(--cyan); border: 1px solid rgba(0, 255, 204, 0.15);">ROI IMPACT CALCULATOR</span>
+                <h2 style="font-size: 2.5rem; margin-top: 15px;">Estimate Your Annual Savings</h2>
+                <p style="color: var(--text-muted); max-width: 600px; margin: 16px auto 0;">See how dynamic charging algorithms offset operational fleet budgets.</p>
+            </div>
+            <div class="roi-calculator-card">
+                <div class="calculator-inputs">
+                    <div class="calc-group">
+                        <label class="calc-label">Active Fleet Size: <span id="fleet-val" style="color:var(--cyan); font-family:var(--font-mono); font-weight:700;">50</span> Vehicles</label>
+                        <input type="range" id="fleet-size" class="calc-slider" min="5" max="500" value="50" oninput="calculateSavings()">
+                    </div>
+                    <div class="calc-group">
+                        <label class="calc-label">Avg. Daily Miles per EV: <span id="miles-val" style="color:var(--cyan); font-family:var(--font-mono); font-weight:700;">80</span> mi</label>
+                        <input type="range" id="daily-miles" class="calc-slider" min="20" max="250" value="80" oninput="calculateSavings()">
+                    </div>
+                </div>
+                <div class="calculator-results">
+                    <div class="result-box">
+                        <div class="result-val" id="savings-cost">$84,000</div>
+                        <div style="font-weight:600; margin-top:8px; color:var(--text-primary);">Annual Cost Savings</div>
+                    </div>
+                    <div class="result-box" style="background: rgba(0, 255, 204, 0.02); border-color: rgba(0, 255, 204, 0.08);">
+                        <div class="result-val" id="savings-co2" style="color:var(--lime); text-shadow:0 0 15px rgba(57,255,20,0.2);">128 Tons</div>
+                        <div style="font-weight:600; margin-top:8px; color:var(--text-primary);">CO2 Offset / Year</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script>
+            function calculateSavings() {
+                const fleet = parseInt(document.getElementById('fleet-size').value);
+                const miles = parseInt(document.getElementById('daily-miles').value);
+                
+                document.getElementById('fleet-val').textContent = fleet;
+                document.getElementById('miles-val').textContent = miles;
+                
+                const annualMiles = fleet * miles * 300;
+                const standardFuelCost = annualMiles * 0.15;
+                const evChargingCost = annualMiles * 0.05;
+                const offPeakSavings = annualMiles * 0.04;
+                const totalCostSavings = (standardFuelCost - evChargingCost) + offPeakSavings;
+                
+                const co2Savings = (annualMiles * 0.411) / 1000;
+                
+
+                document.getElementById('savings-cost').textContent = '$$' + Math.round(totalCostSavings).toLocaleString();
+                document.getElementById('savings-co2').textContent = Math.round(co2Savings).toLocaleString() + ' Tons';
+            }
+        </script>
+    </section>
+
+    <!-- Section 3: Platform Live Status Monitor -->
+    <section class="live-status-section" style="padding: 100px 0; background: var(--bg-graphite); border-top: 1px solid var(--border-color);" data-aos="fade-up">
+        <div class="container">
+            <div class="text-center" style="margin-bottom: 60px;">
+                <span class="tech-badge" style="background: rgba(0, 255, 204, 0.08); color: var(--cyan); border: 1px solid rgba(0, 255, 204, 0.15);">GRID SYSTEMS INTEGRITY</span>
+                <h2 style="font-size: 2.5rem; margin-top: 15px;">Live Network Dispatch Monitor</h2>
+                <p style="color: var(--text-muted); max-width: 600px; margin: 16px auto 0;">Real-time server cluster status of our dynamic load-dispatch controllers.</p>
+            </div>
+            <div class="grid-3">
+                <div class="card" style="padding: 30px; display: flex; align-items: center; gap: 20px; transition: var(--transition-normal);" data-aos="zoom-in" data-aos-delay="100">
+                    <div style="width: 12px; height: 12px; border-radius: 50%; background: var(--lime); box-shadow: 0 0 10px var(--lime); animation: pulse 1.5s infinite;"></div>
+                    <div>
+                        <h4 style="color: var(--text-primary); font-size: 1.1rem; margin-bottom: 4px;">Load Dispatch Manager</h4>
+                        <p style="font-size: 0.85rem; color: var(--text-muted);">Active nodes: 128/128 | Latency: 4ms</p>
+                    </div>
+                </div>
+                <div class="card" style="padding: 30px; display: flex; align-items: center; gap: 20px; transition: var(--transition-normal);" data-aos="zoom-in" data-aos-delay="200">
+                    <div style="width: 12px; height: 12px; border-radius: 50%; background: var(--lime); box-shadow: 0 0 10px var(--lime); animation: pulse 1.5s infinite;"></div>
+                    <div>
+                        <h4 style="color: var(--text-primary); font-size: 1.1rem; margin-bottom: 4px;">Substation Telemetry Inflow</h4>
+                        <p style="font-size: 0.85rem; color: var(--text-muted);">Active feeds: 4,120 | Loss: 0.00%</p>
+                    </div>
+                </div>
+                <div class="card" style="padding: 30px; display: flex; align-items: center; gap: 20px; transition: var(--transition-normal);" data-aos="zoom-in" data-aos-delay="300">
+                    <div style="width: 12px; height: 12px; border-radius: 50%; background: var(--lime); box-shadow: 0 0 10px var(--lime); animation: pulse 1.5s infinite;"></div>
+                    <div>
+                        <h4 style="color: var(--text-primary); font-size: 1.1rem; margin-bottom: 4px;">Fleet API Gateway</h4>
+                        <p style="font-size: 0.85rem; color: var(--text-muted);">Uptime: 100.00% | Requests: 8.4k/s</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+            </div>
+        </div>
+    </section>
+
+<footer class="footer">
         <div class="container">
             <div class="footer-top-grid">
                 <!-- Brand Column -->
@@ -530,7 +677,7 @@
     <button id="scrollTop" aria-label="Scroll to top"><i class="fa-solid fa-chevron-up"></i></button>
 
     <!-- Scripts -->
-    <script src="shared.js"></script>
+    
     <script>
         // 1. CANVAS HERO PARTICLE NETWORK
         const canvas = document.getElementById('hero-canvas');
@@ -786,6 +933,20 @@
 
             drawImpactChart();
         }
+    </script>
+    
+
+    <!-- Shared JS Functions -->
+    <script src="shared.js?v=1.1"></script>
+    <!-- AOS Scroll Animations Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true,
+            mirror: false
+        });
     </script>
 </body>
 </html>

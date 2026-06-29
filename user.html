@@ -5,9 +5,44 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Personal Energy Hub - Stackly Grid</title>
     <!-- Styles -->
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css?v=1.1">
     <!-- Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- Header responsive overrides (caching protection) -->
+    <style>
+        @media (max-width: 992px) {
+            .db-header {
+                padding: 10px 20px;
+                min-height: 80px;
+                height: auto;
+            }
+            .db-title {
+                font-size: 1.2rem !important;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                min-width: 0;
+                flex: 1;
+            }
+            .db-user-pill {
+                padding: 4px !important;
+                background: transparent !important;
+                border: none !important;
+            }
+            .db-user-pill .display-name {
+                display: none !important;
+            }
+            .db-table td, .db-table th {
+                white-space: normal !important;
+                word-break: break-word !important;
+            }
+        }
+        @media (max-width: 580px) {
+            .db-title {
+                font-size: 1.05rem !important;
+            }
+        }
+    </style>
 </head>
 <body class="dashboard-wrapper">
 
@@ -28,23 +63,24 @@
             <li><a class="sidebar-link" onclick="switchUserSection('stations')"><i class="fa-solid fa-map-location-dot"></i> Saved Stations</a></li>
             <li><a class="sidebar-link" onclick="switchUserSection('notifications')"><i class="fa-solid fa-bell"></i> Notifications <span class="badge badge-lime" style="padding:2px 6px; font-size:0.6rem; margin:0;" id="notif-count">2</span></a></li>
             <li><a class="sidebar-link" onclick="switchUserSection('settings')"><i class="fa-solid fa-gear"></i> Settings</a></li>
-            <li style="margin-top: auto;"><a  href="404.html"><i class="fa-solid fa-right-from-bracket"></i> Logout</a></li>
+            <li style="margin-top: auto;"><a href="index.html" onclick="sessionStorage.removeItem('currentUser')"><i class="fa-solid fa-right-from-bracket"></i> Logout</a></li>
         </ul>
 
         <div class="sidebar-footer">
             <i class="fa-solid fa-user"></i> <span class="display-email">user@stackly.com</span>
         </div>
     </aside>
+    <div class="sidebar-overlay" id="sidebar-overlay"></div>
 
     <!-- Main Content Area -->
     <main class="db-main">
         <!-- Top bar -->
         <header class="db-header">
-            <div style="display: flex; align-items: center; gap: 16px;">
-                <button class="btn btn-secondary btn-sm" id="sidebar-toggle" style="display: none; padding: 6px 10px;">
+            <div style="display: flex; align-items: center; gap: 16px; min-width: 0; flex: 1; margin-right: 12px;">
+                <button class="btn btn-secondary btn-sm" id="sidebar-toggle" style="display: none; padding: 6px 10px; flex-shrink: 0;">
                     <i class="fa-solid fa-bars"></i>
                 </button>
-                <div class="db-title" id="section-title">Personal Energy Hub</div>
+                <div class="db-title" id="section-title" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">Personal Energy Hub</div>
             </div>
             
             <div class="db-user-pill">
@@ -366,19 +402,30 @@
             
             // Close mobile menu
             const sidebar = document.getElementById('db-sidebar');
+            const sidebarOverlay = document.getElementById('sidebar-overlay');
             if (sidebar.classList.contains('active')) {
                 sidebar.classList.remove('active');
+                if (sidebarOverlay) {
+                    sidebarOverlay.classList.remove('active');
+                }
             }
         }
 
         // Sidebar Mobile Toggle
         const sideToggle = document.getElementById('sidebar-toggle');
         const sidebar = document.getElementById('db-sidebar');
+        const sidebarOverlay = document.getElementById('sidebar-overlay');
         if (sideToggle && sidebar) {
-            sideToggle.style.display = 'block';
-            sideToggle.addEventListener('click', () => {
+            const toggleSidebar = () => {
                 sidebar.classList.toggle('active');
-            });
+                if (sidebarOverlay) {
+                    sidebarOverlay.classList.toggle('active');
+                }
+            };
+            sideToggle.addEventListener('click', toggleSidebar);
+            if (sidebarOverlay) {
+                sidebarOverlay.addEventListener('click', toggleSidebar);
+            }
         }
 
         // Render EVs dynamically
@@ -397,7 +444,7 @@
             const vehicles = userInDb.vehicles || [];
 
             if (vehicles.length === 0) {
-                tbody.innerHTML = `<tr><td colspan="5" style="text-align:center; color:var(--text-muted);">No registered vehicles found. Register your first EV above.</td></tr>`;
+                tbody.innerHTML = `<tr><td colspan="5" style="text-align:center; color:var(--text-muted); padding:30px 15px; white-space:normal; word-break:break-word;">No registered vehicles found. Register your first EV above.</td></tr>`;
                 return;
             }
 

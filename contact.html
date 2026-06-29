@@ -6,9 +6,26 @@
     <title>Contact Dispatch - Stackly Grid</title>
     <meta name="description" content="Reach our network operations center, check smart grid FAQs, or submit routing inquiries.">
     <!-- Styles -->
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css?v=1.1">
     <!-- FontAwesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- AOS Scroll Animations -->
+    
+
+    <!-- AOS Loading Fallback Protection -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            setTimeout(function() {
+                if (typeof AOS === 'undefined' || !document.documentElement.classList.contains('aos-init')) {
+                    var style = document.createElement('style');
+                    style.id = 'aos-fallback';
+                    style.textContent = '[data-aos] { opacity: 1 !important; transform: none !important; transition: none !important; }';
+                    document.head.appendChild(style);
+                    console.log('AOS fallback activated');
+                }
+            }, 1200);
+        });
+    </script>
 </head>
 <body>
 
@@ -70,7 +87,7 @@
     </section>
 
     <!-- Content Sections 2 & 3 Combined Layout -->
-    <section class="section-padding" style="border-bottom: 1px solid var(--border-color);">
+    <section class="section-padding" style="border-bottom: 1px solid var(--border-color);" data-aos="fade-up">
         <div class="container contact-grid">
             
             <!-- SECTION 2: Contact Details -->
@@ -143,7 +160,7 @@
     </section>
 
     <!-- SECTION 4: FAQ (Accordion Blocks) -->
-    <section class="section-padding bg-graphite-light" id="faq" style="border-bottom: 1px solid var(--border-color);">
+    <section class="section-padding bg-graphite-light" id="faq" style="border-bottom: 1px solid var(--border-color);" data-aos="fade-up">
         <div class="container" style="max-width: 800px;">
             <div class="section-header">
                 <span class="badge badge-purple">Knowledge base</span>
@@ -189,7 +206,7 @@
     </section>
 
     <!-- SECTION 5: Support Channels -->
-    <section class="section-padding" style="border-bottom: 1px solid var(--border-color);">
+    <section class="section-padding" style="border-bottom: 1px solid var(--border-color);" data-aos="fade-up">
         <div class="container">
             <div class="section-header">
                 <span class="badge badge-lime">Uptime channels</span>
@@ -221,7 +238,7 @@
     </section>
 
     <!-- SECTION 6: CTA -->
-    <section class="cta-section">
+    <section class="cta-section" data-aos="fade-up">
         <div class="container cta-content">
             <h2>Ready to secure your energy?</h2>
             <p>Sign up to view active station maps and claim off-peak charging pricing credits today.</p>
@@ -233,7 +250,76 @@
     </section>
 
     <!-- FOOTER -->
-    <footer class="footer">
+    
+    <!-- Section 1: Global Office Locations -->
+    <section class="office-locations" style="padding: 80px 0; background: var(--bg-graphite-light); border-top: 1px solid var(--border-color);" data-aos="fade-up">
+        <div class="container">
+            <div class="text-center" style="margin-bottom: 60px;">
+                <span class="tech-badge" style="background: rgba(0, 255, 204, 0.08); color: var(--cyan); border: 1px solid rgba(0, 255, 204, 0.15);">GLOBAL PRESENCE</span>
+                <h2 style="font-size: 2.5rem; margin-top: 15px;">Our Dispatch Headquarters</h2>
+                <p style="color: var(--text-muted); max-width: 600px; margin: 16px auto 0;">NOC regional coordination offices providing round-the-clock grid support.</p>
+            </div>
+            <div class="grid-3">
+                <div class="card" style="padding: 30px;" data-aos="fade-up" data-aos-delay="100">
+                    <div style="font-size:1.15rem; font-weight:700; color:var(--text-primary); margin-bottom:8px;"><i class="fa-solid fa-location-dot" style="color:var(--cyan); margin-right:8px;"></i> Silicon Valley HQs</div>
+                    <p style="font-size:0.85rem; color:var(--text-muted); line-height:1.6; margin-bottom:12px;">100 Innovation Way, Suite 400<br>Palo Alto, CA 94301</p>
+                    <div style="font-size:0.8rem; font-family:var(--font-mono); color:var(--cyan);">Active Zone: UTC-8</div>
+                </div>
+                <div class="card" style="padding: 30px;" data-aos="fade-up" data-aos-delay="200">
+                    <div style="font-size:1.15rem; font-weight:700; color:var(--text-primary); margin-bottom:8px;"><i class="fa-solid fa-location-dot" style="color:var(--lime); margin-right:8px;"></i> European Dispatch</div>
+                    <p style="font-size:0.85rem; color:var(--text-muted); line-height:1.6; margin-bottom:12px;">Karl-Heine-Straße 99, Loft B<br>Leipzig, Germany 04229</p>
+                    <div style="font-size:0.8rem; font-family:var(--font-mono); color:var(--lime);">Active Zone: UTC+1</div>
+                </div>
+                <div class="card" style="padding: 30px;" data-aos="fade-up" data-aos-delay="300">
+                    <div style="font-size:1.15rem; font-weight:700; color:var(--text-primary); margin-bottom:8px;"><i class="fa-solid fa-location-dot" style="color:var(--cyan); margin-right:8px;"></i> Asia-Pacific Hub</div>
+                    <p style="font-size:0.85rem; color:var(--text-muted); line-height:1.6; margin-bottom:12px;">12 Marina Boulevard, Level 18<br>Singapore 018982</p>
+                    <div style="font-size:0.8rem; font-family:var(--font-mono); color:var(--cyan);">Active Zone: UTC+8</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 2: SLA Escalation Matrix -->
+    <section class="sla-matrix" style="padding: 80px 0; background: var(--bg-graphite);" data-aos="fade-up">
+        <div class="container">
+            <div class="text-center" style="margin-bottom: 60px;">
+                <span class="tech-badge" style="background: rgba(0, 255, 204, 0.08); color: var(--cyan); border: 1px solid rgba(0, 255, 204, 0.15);">SLA COMMITMENT</span>
+                <h2 style="font-size: 2.5rem; margin-top: 15px;">Support Escalation Matrix</h2>
+                <p style="color: var(--text-muted); max-width: 600px; margin: 16px auto 0;">Response times guarantees backed by our central Network Operations Center.</p>
+            </div>
+            <div class="sla-grid">
+                <div class="sla-card" data-aos="zoom-in" data-aos-delay="100">
+                    <div style="font-weight:600; text-transform:uppercase; color:var(--text-muted); font-size:0.85rem;">TIER 1 // Telematics Alert</div>
+                    <div class="sla-time">&lt; 15m</div>
+                    <p style="font-size:0.85rem; color:var(--text-muted);">Digital handshake, authentication failures, and API gateway routing errors resolved online.</p>
+                </div>
+                <div class="sla-card" data-aos="zoom-in" data-aos-delay="200" style="border-color:rgba(16,185,129,0.25);">
+                    <div style="font-weight:600; text-transform:uppercase; color:var(--lime); font-size:0.85rem;">TIER 2 // Substation Shunt</div>
+                    <div class="sla-time" style="color:var(--lime);">&lt; 30m</div>
+                    <p style="font-size:0.85rem; color:var(--text-muted);">Grid feed balance mismatches, local load-shaving shunts, and charger outages adjusted by NOC operator.</p>
+                </div>
+                <div class="sla-card" data-aos="zoom-in" data-aos-delay="300">
+                    <div style="font-weight:600; text-transform:uppercase; color:var(--text-muted); font-size:0.85rem;">TIER 3 // Hardware Swap</div>
+                    <div class="sla-time">&lt; 24h</div>
+                    <p style="font-size:0.85rem; color:var(--text-muted);">Megawatt liquid-cooled charger cables and physical terminal replacements completed on-site by field technician.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 3: Substation Partner Application -->
+    <section class="partner-apply" style="padding: 80px 0; background: var(--bg-graphite-light); border-top: 1px solid var(--border-color);" data-aos="fade-up">
+        <div class="container">
+            <div class="card" style="max-width:800px; margin:0 auto; padding:40px; text-align:center; position:relative; overflow:hidden;" data-aos="zoom-in">
+                <span class="tech-badge" style="background: rgba(0, 255, 204, 0.08); color: var(--cyan); border: 1px solid rgba(0, 255, 204, 0.15); margin-bottom:20px; display:inline-block;">INFRASTRUCTURE EXPANSION</span>
+                <h2 style="font-size: 2.3rem; margin-bottom:12px;">Apply to Join Our Charging Grid</h2>
+                <p style="color: var(--text-muted); max-width: 600px; margin: 0 auto 24px; font-size:0.95rem;">Are you a landowner or grid substation operator? Integrate your power flow directly into our dynamic billing system.</p>
+                <a href="404.html" class="btn btn-primary"><i class="fa-solid fa-file-contract"></i> Partner Application Portal</a>
+            </div>
+        </div>
+    </section>
+
+<footer class="footer">
         <div class="container">
             <div class="footer-top-grid">
                 <!-- Brand Column -->
@@ -314,7 +400,7 @@
     <!-- Scripts -->
 
     <!-- Scripts -->
-    <script src="shared.js"></script>
+    
     <script>
         // Toggle Accordion FAQ blocks
         function toggleFaq(button) {
@@ -392,6 +478,24 @@
             setTimeout(() => {
                 document.getElementById('contact-success').style.display = 'none';
             }, 3000);
+        });
+    </script>
+    
+
+    <!-- Shared JS Functions -->
+    <script src="shared.js?v=1.1"></script>
+    
+
+    <!-- Shared JS Functions -->
+    <script src="shared.js?v=1.1"></script>
+    <!-- AOS Scroll Animations Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true,
+            mirror: false
         });
     </script>
 </body>
