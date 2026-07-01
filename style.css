@@ -1583,6 +1583,9 @@ textarea.form-input {
     display: flex;
     min-height: 100vh;
     background: var(--bg-graphite);
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
 }
 
 .sidebar {
@@ -1929,6 +1932,9 @@ textarea.form-input {
     border-radius: var(--border-radius);
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
 }
 
 .db-table {
@@ -2261,6 +2267,9 @@ textarea.form-input {
     }
     .db-main {
         margin-left: 0;
+        min-width: 0;
+        width: 100%;
+        max-width: 100%;
     }
     .db-header {
         padding: 10px 20px;
@@ -2280,6 +2289,10 @@ textarea.form-input {
     }
     .db-body {
         padding: 24px;
+        min-width: 0;
+        width: 100%;
+        max-width: 100%;
+        overflow-x: hidden;
     }
     .db-table {
         min-width: 650px;

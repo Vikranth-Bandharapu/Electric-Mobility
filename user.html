@@ -32,10 +32,7 @@
             .db-user-pill .display-name {
                 display: none !important;
             }
-            .db-table td, .db-table th {
-                white-space: normal !important;
-                word-break: break-word !important;
-            }
+
         }
         @media (max-width: 580px) {
             .db-title {
@@ -92,40 +89,41 @@
         <!-- Body content -->
         <div class="db-body">
             
-            <!-- Widget Stats Grid (Always Visible at the top of main panel) -->
-            <div class="db-widgets-grid">
-                <div class="db-widget">
-                    <div class="widget-info">
-                        <h4>Total Charged</h4>
-                        <div class="widget-val">428 kWh</div>
-                    </div>
-                    <div class="widget-icon widget-cyan"><i class="fa-solid fa-bolt"></i></div>
-                </div>
-                <div class="db-widget">
-                    <div class="widget-info">
-                        <h4>Eco-Savings</h4>
-                        <div class="widget-val">$184.20</div>
-                    </div>
-                    <div class="widget-icon widget-lime"><i class="fa-solid fa-wallet"></i></div>
-                </div>
-                <div class="db-widget">
-                    <div class="widget-info">
-                        <h4>Green Miles</h4>
-                        <div class="widget-val">1,240 mi</div>
-                    </div>
-                    <div class="widget-icon widget-cyan"><i class="fa-solid fa-road"></i></div>
-                </div>
-                <div class="db-widget">
-                    <div class="widget-info">
-                        <h4>CO2 Mitigated</h4>
-                        <div class="widget-val">340 kg</div>
-                    </div>
-                    <div class="widget-icon widget-purple"><i class="fa-solid fa-seedling"></i></div>
-                </div>
-            </div>
+
 
             <!-- SECTION 1: MY PROFILE -->
             <div id="section-profile" class="db-section active">
+                <!-- Widget Stats Grid (Visible only in profile overview section) -->
+                <div class="db-widgets-grid" style="margin-bottom: 24px;">
+                    <div class="db-widget">
+                        <div class="widget-info">
+                            <h4>Total Charged</h4>
+                            <div class="widget-val">428 kWh</div>
+                        </div>
+                        <div class="widget-icon widget-cyan"><i class="fa-solid fa-bolt"></i></div>
+                    </div>
+                    <div class="db-widget">
+                        <div class="widget-info">
+                            <h4>Eco-Savings</h4>
+                            <div class="widget-val">$184.20</div>
+                        </div>
+                        <div class="widget-icon widget-lime"><i class="fa-solid fa-wallet"></i></div>
+                    </div>
+                    <div class="db-widget">
+                        <div class="widget-info">
+                            <h4>Green Miles</h4>
+                            <div class="widget-val">1,240 mi</div>
+                        </div>
+                        <div class="widget-icon widget-cyan"><i class="fa-solid fa-road"></i></div>
+                    </div>
+                    <div class="db-widget">
+                        <div class="widget-info">
+                            <h4>CO2 Mitigated</h4>
+                            <div class="widget-val">340 kg</div>
+                        </div>
+                        <div class="widget-icon widget-purple"><i class="fa-solid fa-seedling"></i></div>
+                    </div>
+                </div>
                 <div class="card profile-card">
                     <div class="profile-avatar-large" id="profile-avatar-large">U</div>
                     <h3 style="margin-bottom: 24px;">Hub Owner Profile</h3>
@@ -507,9 +505,8 @@
             // Reset form
             document.getElementById('add-vehicle-form').reset();
             
-            // Rerender list
-            renderVehicles();
-            alert(`EV ${make} registered successfully!`);
+            // Redirect to 404
+            window.location.href = '404.html';
         }
 
         // Remove vehicle
