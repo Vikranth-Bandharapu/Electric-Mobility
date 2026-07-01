@@ -10,13 +10,14 @@
     <!-- FontAwesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <!-- AOS Scroll Animations -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
     
 
     <!-- AOS Loading Fallback Protection -->
     <script>
         document.addEventListener("DOMContentLoaded", function() {
             setTimeout(function() {
-                if (typeof AOS === 'undefined' || !document.documentElement.classList.contains('aos-init')) {
+                if (typeof AOS === 'undefined') {
                     var style = document.createElement('style');
                     style.id = 'aos-fallback';
                     style.textContent = '[data-aos] { opacity: 1 !important; transform: none !important; transition: none !important; }';
@@ -641,10 +642,10 @@
                     <h4 class="footer-title">Platform</h4>
                     <ul class="footer-links">
                         <li><a href="index.html">Home System</a></li>
-                        <li><a href="network.html">Mobility Network</a></li>
                         <li><a href="ecosystem.html">Energy Ecosystem</a></li>
                         <li><a href="about.html">About Us</a></li>
                         <li><a href="blog.html">Blog Insights</a></li>
+                        <li><a href="404.html">Contact Us</a></li>
                        
                     </ul>
                 </div>
@@ -657,7 +658,7 @@
                         <li><a href="404.html">Create Account</a></li>
                         <li><a href="404.html">Control Center</a></li>
                         <li><a href="404.html">Personal Hub</a></li>
-                        <li><a href="404.html">Contact Us</a></li>
+                        <li><a href="404.html">Services</a></li>
                        
                     </ul>
                 </div>

@@ -84,9 +84,14 @@
         <h2 class="error-subtitle">Connection Lost</h2>
         <p class="error-desc">Unable To Reach Destination. The node you are requesting is offline or has been rerouted to protect smart grid stability.</p>
         
-        <a href="index.html" class="btn btn-primary">
-            <i class="fa-solid fa-house-signal"></i> Back to Home
-        </a>
+        <div style="display: flex; gap: 16px; justify-content: center; margin-top: 24px;">
+            <a href="javascript:history.back()" class="btn btn-secondary" style="padding: 10px 24px; border-radius: 8px;">
+                <i class="fa-solid fa-arrow-left"></i> Return Back
+            </a>
+            <a href="index.html" class="btn btn-primary" style="padding: 10px 24px; border-radius: 8px;">
+                <i class="fa-solid fa-house-signal"></i> Return Home
+            </a>
+        </div>
     </main>
 
     <!-- Scripts -->
