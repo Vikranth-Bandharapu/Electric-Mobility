@@ -95,8 +95,8 @@
                         A decentralized smart infrastructure connecting renewable resources, battery matrices, charging hubs, and electric vehicle grids in real time.
                     </p>
                     <div class="hero-btns">
-                        <a href="404.html" class="btn btn-primary"><i class="fa-solid fa-network-wired"></i> Discover Network</a>
-                        <a href="404.html" class="btn btn-secondary"><i class="fa-solid fa-leaf"></i> Explore Ecosystem</a>
+                        <a href="network.html" class="btn btn-primary"><i class="fa-solid fa-network-wired"></i> Discover Network</a>
+                        <a href="ecosystem.html" class="btn btn-secondary"><i class="fa-solid fa-leaf"></i> Explore Ecosystem</a>
                     </div>
                 </div>
             </div>
@@ -201,32 +201,52 @@
                         <!-- Nodes -->
                         <g class="flow-node flow-node-solar" onclick="highlightFlow('solar')">
                             <circle cx="100" cy="150" r="36"></circle>
-                            <text x="100" y="145" class="flow-node-icon">&#xf185;</text>
-                            <text x="100" y="172" font-size="10">SOLAR</text>
+                            <foreignObject x="64" y="114" width="72" height="72">
+                                <div style="width: 100%; height: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center; pointer-events: none; text-align: center;">
+                                    <i class="fa-solid fa-sun" style="font-size: 16px; color: var(--text-primary); margin-bottom: 2px;"></i>
+                                    <span style="font-size: 8px; font-weight: 700; letter-spacing: 0.05em; color: var(--text-primary); font-family: var(--font-heading); text-transform: uppercase; white-space: nowrap;">Solar</span>
+                                </div>
+                            </foreignObject>
                         </g>
 
                         <g class="flow-node flow-node-grid" onclick="highlightFlow('grid')">
                             <circle cx="300" cy="150" r="36"></circle>
-                            <text x="300" y="145" class="flow-node-icon">&#xf0e8;</text>
-                            <text x="300" y="172" font-size="10">SMART GRID</text>
+                            <foreignObject x="264" y="114" width="72" height="72">
+                                <div style="width: 100%; height: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center; pointer-events: none; text-align: center;">
+                                    <i class="fa-solid fa-sitemap" style="font-size: 16px; color: var(--text-primary); margin-bottom: 2px;"></i>
+                                    <span style="font-size: 8px; font-weight: 700; letter-spacing: 0.05em; color: var(--text-primary); font-family: var(--font-heading); text-transform: uppercase; white-space: nowrap;">Smart Grid</span>
+                                </div>
+                            </foreignObject>
                         </g>
 
                         <g class="flow-node flow-node-station" onclick="highlightFlow('station')">
                             <circle cx="500" cy="150" r="36"></circle>
-                            <text x="500" y="145" class="flow-node-icon">&#xf5e7;</text>
-                            <text x="500" y="172" font-size="10">CHARGER</text>
+                            <foreignObject x="464" y="114" width="72" height="72">
+                                <div style="width: 100%; height: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center; pointer-events: none; text-align: center;">
+                                    <i class="fa-solid fa-charging-station" style="font-size: 16px; color: var(--text-primary); margin-bottom: 2px;"></i>
+                                    <span style="font-size: 8px; font-weight: 700; letter-spacing: 0.05em; color: var(--text-primary); font-family: var(--font-heading); text-transform: uppercase; white-space: nowrap;">Charger</span>
+                                </div>
+                            </foreignObject>
                         </g>
 
                         <g class="flow-node flow-node-ev" onclick="highlightFlow('ev')">
                             <circle cx="700" cy="150" r="36"></circle>
-                            <text x="700" y="145" class="flow-node-icon">&#xf1b9;</text>
-                            <text x="700" y="172" font-size="10">EV LOAD</text>
+                            <foreignObject x="664" y="114" width="72" height="72">
+                                <div style="width: 100%; height: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center; pointer-events: none; text-align: center;">
+                                    <i class="fa-solid fa-car" style="font-size: 16px; color: var(--text-primary); margin-bottom: 2px;"></i>
+                                    <span style="font-size: 8px; font-weight: 700; letter-spacing: 0.05em; color: var(--text-primary); font-family: var(--font-heading); text-transform: uppercase; white-space: nowrap;">EV Load</span>
+                                </div>
+                            </foreignObject>
                         </g>
 
                         <g class="flow-node flow-node-city" onclick="highlightFlow('city')">
                             <circle cx="900" cy="150" r="36"></circle>
-                            <text x="900" y="145" class="flow-node-icon">&#xf64f;</text>
-                            <text x="900" y="172" font-size="10">SMART CITY</text>
+                            <foreignObject x="864" y="114" width="72" height="72">
+                                <div style="width: 100%; height: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center; pointer-events: none; text-align: center;">
+                                    <i class="fa-solid fa-city" style="font-size: 16px; color: var(--text-primary); margin-bottom: 2px;"></i>
+                                    <span style="font-size: 8px; font-weight: 700; letter-spacing: 0.05em; color: var(--text-primary); font-family: var(--font-heading); text-transform: uppercase; white-space: nowrap;">Smart City</span>
+                                </div>
+                            </foreignObject>
                         </g>
                     </svg>
 
@@ -459,9 +479,9 @@
             <div class="container cta-content">
                 <h2>Ready to connect your fleet?</h2>
                 <p>Register your EV and join our decentralized load-balancing ecosystem to optimize your battery consumption.</p>
-                <div style="display: flex; gap: 16px; justify-content: center;">
-                    <a href="404.html" class="btn btn-primary"><i class="fa-solid fa-user-plus"></i> Join the Grid</a>
-                    <a href="404.html" class="btn btn-secondary"><i class="fa-solid fa-envelope"></i> Contact dispatchers</a>
+                <div class="cta-btns">
+                    <a href="signup.html" class="btn btn-primary"><i class="fa-solid fa-user-plus"></i> Join the Grid</a>
+                    <a href="contact.html" class="btn btn-secondary"><i class="fa-solid fa-envelope"></i> Contact dispatchers</a>
                 </div>
             </div>
         </section>
@@ -633,11 +653,11 @@
                 <div>
                     <h4 class="footer-title">Control Hub</h4>
                     <ul class="footer-links">
-                        <li><a href="login.html">Member Login</a></li>
-                        <li><a href="signup.html">Create Account</a></li>
-                        <li><a href="admin.html">Control Center</a></li>
-                        <li><a href="user.html">Personal Hub</a></li>
-                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="404.html">Member Login</a></li>
+                        <li><a href="404.html">Create Account</a></li>
+                        <li><a href="404.html">Control Center</a></li>
+                        <li><a href="404.html">Personal Hub</a></li>
+                        <li><a href="404.html">Contact Us</a></li>
                        
                     </ul>
                 </div>
@@ -646,13 +666,13 @@
                 <div>
                     <h4 class="footer-title">Contact Info</h4>
                     <ul class="footer-contact-list">
-                        <li>
+                      <li>
                             <i class="fa-solid fa-map-marker-alt"></i>
-                            <span>882 Tesla Parkway, Suite 400, Austin, TX 78725</span>
+                            <span>882 Tesla Parkway, Suite 400, Stackly, Hyderabad</span>
                         </li>
                         <li>
                             <i class="fa-solid fa-phone-alt"></i>
-                            <span><a href="tel:+18005550199">+1 (800) 555-0199</a></span>
+                            <span><a href="tel:+18005550199">9876543210</a></span>
                         </li>
                         <li>
                             <i class="fa-solid fa-envelope"></i>

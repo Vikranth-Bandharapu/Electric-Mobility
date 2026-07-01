@@ -517,6 +517,20 @@
             }
         }
 
+// Dynamic User Display updates
+        window.addEventListener('DOMContentLoaded', () => {
+            const currentUserJson = sessionStorage.getItem('currentUser');
+            if (currentUserJson) {
+                const user = JSON.parse(currentUserJson);
+                document.querySelectorAll('.display-name').forEach(el => {
+                    el.textContent = user.name || user.email.split('@')[0];
+                });
+                document.querySelectorAll('.display-email').forEach(el => {
+                    el.textContent = user.email;
+                });
+            }
+        });
+
         // Render dynamically user list from LocalStorage
         function populateUsersList() {
             const tableBody = document.querySelector('#db-users-table tbody');

@@ -2281,9 +2281,11 @@ textarea.form-input {
     .db-body {
         padding: 24px;
     }
+    .db-table {
+        min-width: 650px;
+    }
     .db-table td, .db-table th {
-        white-space: normal !important;
-        word-break: break-word !important;
+        white-space: nowrap !important;
     }
     .mobile-menu {
         width: 100%;
@@ -2524,6 +2526,7 @@ textarea.form-input {
     gap: 12px;
 }
 
+.blog-newsletter-form .form-input,
 .blog-newsletter-form .search-input {
     flex-grow: 1;
     background: rgba(10, 12, 16, 0.4);
@@ -2561,8 +2564,6 @@ textarea.form-input {
         align-items: stretch;
     }
 }
-
-
 /* ==========================================================================
    NEW RESPONSIBLE AND PREMIUM LAYOUT SECTIONS
    ========================================================================== */
@@ -2833,4 +2834,53 @@ textarea.form-input {
     border: 1px solid rgba(0, 255, 204, 0.15) !important;
     margin-bottom: 16px;
     text-shadow: 0 0 10px rgba(0, 255, 204, 0.1);
+}
+/* CTA Buttons Flex Container & Mobile Stacking */
+.cta-btns {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 24px;
+}
+@media (max-width: 580px) {
+    .cta-btns {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    .cta-btns .btn {
+        width: 100%;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+    }
+}
+/* Blog Card Filtering Transitions */
+.blog-card.fade-out {
+    display: none !important;
+}
+.blog-card.fade-in {
+    animation: blogFadeIn 0.4s ease-in-out forwards;
+}
+@keyframes blogFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+/* SVG Node Hover Scaling */
+.flow-node foreignObject {
+    transition: var(--transition-normal);
+    transform-origin: center;
+}
+.flow-node:hover foreignObject {
+    transform: scale(1.08);
+}
+/* Section Header Badges Spacing */
+.section-header .badge {
+    margin-bottom: 16px !important;
 }
